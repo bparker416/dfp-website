@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{a as p,b as n,c as r,d as i,e as m,j as s,m as a,o as f,p as c,s as l,y as g}from"./chunk-CGIB7MNT.mjs";var o=class e{title="dfp-website";static \u0275fac=function(t){return new(t||e)};static \u0275cmp=p({type:e,selectors:[["app-root"]],standalone:!0,features:[m],decls:2,vars:0,consts:[["src","assets/longlogo.svg","alt","Long Logo"]],template:function(t,b){t&1&&(n(0,"div"),i(1,"img",0),r())}})};var d=[];var u={providers:[s({eventCoalescing:!0}),g(d),c()]};var A={providers:[l()]},C=a(u,A);var x=()=>f(o,C),k=x;export{k as a};
