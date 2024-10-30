@@ -8,6 +8,7 @@ h1 {
 
 #navbarNav {
   color: white;
+  font-size: larger
 }
 
 header {
@@ -21,3 +22,17 @@ a {
   font-weight: 900;
   font-style: normal;
 }
+
+a:hover {
+  color: #A5433A;
+}
+
+#navbar-toggle-icon {
+  color: black;
+}
+
+#orderNow {
+  background-color: #A5433A;
+}
+
+
