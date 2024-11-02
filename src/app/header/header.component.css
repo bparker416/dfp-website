@@ -28,11 +28,22 @@ a:hover {
 }
 
 #navbar-toggle-icon {
-  color: black;
+  color: white;
 }
 
 #orderNow {
   background-color: #A5433A;
 }
 
+h3 {
+  font-family: "fields", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: black;
+  color: #A5433A;
+  margin: 0;
+}
 
+.active {
+  color: white !important;
+}
