@@ -1,0 +1,49 @@
+h1 {
+  font-family: "fields", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: white;
+  background-color: black;
+}
+
+#navbarNav {
+  color: white;
+  font-size: larger
+}
+
+header {
+  background-color: black;
+}
+
+a {
+  color: white;
+  background-color: black;
+  font-family: "fields", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+a:hover {
+  color: #A5433A;
+}
+
+#navbar-toggle-icon {
+  color: white;
+}
+
+#orderNow {
+  background-color: #A5433A;
+}
+
+h3 {
+  font-family: "fields", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: black;
+  color: #A5433A;
+  margin: 0;
+}
+
+.active {
+  color: white !important;
+}
