@@ -1,1 +1,12 @@
-<p>salad works!</p>
+<div class="container-fluid">
+  <h2>Salads</h2>
+  <ul>
+    <li *ngFor="let salad of salads">
+      <h4>{{ salad.salad_name }} {{ salad.small_price }}
+        <span *ngIf="salad.large_price !== null">/{{ salad.large_price }}</span>
+      </h4>
+      <p>{{ salad.salad_description }}</p>
+      <p>{{ salad.additional_text }}</p>
+    </li>
+  </ul>
+</div>

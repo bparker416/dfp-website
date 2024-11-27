@@ -1,1 +1,9 @@
-<p>sando works!</p>
+<div class="container-fluid">
+  <h3>Sandos.</h3>
+  <p>6" hoagie toasted with garlic butter. Served ala carte</p>
+  <ul>
+    <li *ngFor="let sando of sandos">
+      <h4>{{ sando.sando_name }} {{ sando.sando_price }}</h4>
+    </li>
+  </ul>
+</div>
