@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {MeatService} from "../models/meat/meat.service";
+import {MeatService} from "../../models/food-menu-models/meat/meat.service";
 import {Observable} from "rxjs";
 
 @Component({

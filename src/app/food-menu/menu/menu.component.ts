@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
+import { HeaderComponent } from "../../header/header.component";
 import {PizzaListComponent} from "../pizza-list/pizza-list.component";
 import {HttpClientModule} from "@angular/common/http";
-import {PizzaService} from "../models/pizza/pizza.service";
-import {AppetizerService} from "../models/appetizer/appetizer.service";
+import {PizzaService} from "../../models/food-menu-models/pizza/pizza.service";
+import {AppetizerService} from "../../models/food-menu-models/appetizer/appetizer.service";
 import {AppetizerComponent} from "../appetizer/appetizer.component";
 import {SideComponent} from "../side/side.component";
-import {SideService} from "../models/side/side.service";
+import {SideService} from "../../models/food-menu-models/side/side.service";
 
 @Component({
   selector: 'app-menu',
