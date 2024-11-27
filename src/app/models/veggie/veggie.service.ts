@@ -11,7 +11,7 @@ export class VeggieService {
 
   constructor(private http: HttpClient) { }
 
-  getVeggies(): Observable<any[]> {
+  getVeggies(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
 }
