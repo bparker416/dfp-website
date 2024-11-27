@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
   templateUrl: './meat.component.html',
   styleUrl: './meat.component.css'
 })
-export class MeatComponent implements OnInit{
+export class MeatComponent implements OnInit {
   meatPriceByThree: any[] = [];
   meatPriceByFour: any[] = [];
 
