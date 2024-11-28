@@ -1,1 +1,13 @@
-<p>cheese works!</p>
+<div class="container-fluid">
+  <h3>CHEESE $2</h3>
+  <span *ngFor="let cheesePriceRegular of cheesePriceIsRegular">
+    {{ cheesePriceRegular.cheese_name }} •
+      <span *ngFor="let cheesePriceOne of cheesePriceIsOne">
+        {{ cheesePriceOne.cheese_name }} (+${{ cheesePriceOne.cheese_price }}) •
+          <span *ngFor="let cheesePriceTwo of cheesePriceIsTwo; let i = index;">
+            {{ cheesePriceTwo.cheese_name }} (+${{ cheesePriceTwo.cheese_price }})
+            <span *ngIf="i < cheesePriceTwo.length">•</span>
+          </span>
+      </span>
+  </span>
+</div>

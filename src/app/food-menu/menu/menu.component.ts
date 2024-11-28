@@ -11,12 +11,27 @@ import {SaladComponent} from "../salad/salad.component";
 import {SaladService} from "../../models/food-menu-models/salad/salad.service";
 import {SandoService} from "../../models/food-menu-models/sando/sando.service";
 import {SandoComponent} from "../sando/sando.component";
+import {SauceComponent} from "../sauce/sauce.component";
+import {SauceService} from "../../models/food-menu-models/sauce/sauce.service";
+import {CheeseComponent} from "../cheese/cheese.component";
+import {MeatComponent} from "../meat/meat.component";
+import {VeggieComponent} from "../veggie/veggie.component";
+import {ByoComponent} from "../byo/byo.component";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [HeaderComponent, PizzaListComponent, AppetizerComponent, HttpClientModule, SideComponent, SaladComponent, SandoComponent],
-  providers: [PizzaService, AppetizerService, SideService, SaladService, SandoService],
+  imports: [
+    HeaderComponent,
+    PizzaListComponent,
+    AppetizerComponent,
+    HttpClientModule,
+    SideComponent,
+    SaladComponent,
+    SandoComponent,
+    ByoComponent,
+  ],
+  providers: [PizzaService, AppetizerService, SideService, SaladService, SandoService,],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })

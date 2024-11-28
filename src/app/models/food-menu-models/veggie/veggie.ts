@@ -1,4 +1,5 @@
 export interface Veggie {
-  sauce_id: number;
-  sauce_name: string;
+  veggie_id: number;
+  veggie_name: string;
+  veggie_description: string;
 }

@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {CheeseService} from "../../models/food-menu-models/cheese/cheese.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-cheese',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './cheese.component.html',
   styleUrl: './cheese.component.css'
 })

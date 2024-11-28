@@ -12,7 +12,7 @@ import {VeggieService} from "../../models/food-menu-models/veggie/veggie.service
 export class VeggieComponent implements OnInit {
   veggies: any[] = [];
 
-  private constructor(private veggieService: VeggieService) { }
+  constructor(private veggieService: VeggieService) { }
 
   ngOnInit(): void {
     this.veggieService.getVeggies().subscribe( (data) => { this.veggies = data });

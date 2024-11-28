@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class SauceService {
 
-  private apiUrl = "http://localhost:8080/api/sauce";
+  private apiUrl = "http://localhost:8080/api/sauce/sauce-active";
 
   constructor(private http: HttpClient) { }
 
