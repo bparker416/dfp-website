@@ -11,15 +11,19 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrl: './cheese.component.css'
 })
 export class CheeseComponent implements OnInit {
-  cheesePriceIsRegular: any[] = [];
-  cheesePriceIsOne: any[] = [];
-  cheesePriceIsTwo: any[] = [];
+  allCheeses: any[] = [];
 
-  constructor(private cheeseService: CheeseService) { }
+  constructor(private cheeseService: CheeseService) {}
 
   ngOnInit(): void {
-    this.cheeseService.cheesePriceIsRegular().subscribe( (data) => { this.cheesePriceIsRegular = data });
-    this.cheeseService.cheesePriceIsOne().subscribe( (data) => { this.cheesePriceIsOne = data });
-    this.cheeseService.cheesePriceIsTwo().subscribe( (data) => { this.cheesePriceIsTwo = data });
+    this.cheeseService.cheesePriceIsRegular().subscribe((cheesePriceRegular) => {
+      this.cheeseService.cheesePriceIsOne().subscribe((cheesePriceOne) => {
+        this.cheeseService.cheesePriceIsTwo().subscribe((cheesePriceTwo) => {
+          this.allCheeses = [...cheesePriceRegular, ...cheesePriceOne, ...cheesePriceTwo].sort(
+            (a, b) => (a.cheese_price ?? 0) - (b.cheese_price ?? 0)
+          );
+        })
+      })
+    })
   }
 }
