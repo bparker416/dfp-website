@@ -1,4 +1,6 @@
-<div class="container-fluid">
+<div class="d-flex justify-content-center align-items-center">
+
+  <!-- byo(Build Your Own) component displaying cheese list with additional prices -->
   <h3>CHEESE $2</h3>
   <span *ngFor="let cheese of allCheeses; let i = index">
     <span *ngIf="cheese.cheese_price <= 0; else cheeseAddedPrice">
