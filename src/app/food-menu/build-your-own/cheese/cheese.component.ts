@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {CheeseService} from "../../models/food-menu-models/cheese/cheese.service";
+import {CheeseService} from "../../../models/food-menu-models/cheese/cheese.service";
 import {HttpClientModule} from "@angular/common/http";
 
 @Component({

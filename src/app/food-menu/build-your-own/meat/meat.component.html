@@ -2,7 +2,7 @@
   <h3>MEAT</h3>
 
   <!-- byo(Build Your Own) component displaying meat list by name and separated by price -->
-  <div>
+  <div class="text-center">
     <span>$3-</span>
     <span *ngFor="let meatPriceThree of meatPriceByThree; let i = index">
       {{ meatPriceThree.meat_name }}<span *ngIf="i < meatPriceByThree.length - 1"> • </span>

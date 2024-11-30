@@ -2,7 +2,7 @@
 
   <!-- byo(Build Your Own) component displaying veggie list by name-->
   <h3>VEGGIES, ETC.</h3>
-  <div>
+  <div class="text-center">
     <span *ngFor="let veggie of veggies; let i = index">
       {{ veggie.veggie_name }}<span *ngIf="i < veggies.length - 1"> • </span>
     </span>

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {VeggieService} from "../../models/food-menu-models/veggie/veggie.service";
+import {VeggieService} from "../../../models/food-menu-models/veggie/veggie.service";
 
 @Component({
   selector: 'app-veggie',

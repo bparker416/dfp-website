@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {SauceService} from "../../models/food-menu-models/sauce/sauce.service";
+import {SauceService} from "../../../models/food-menu-models/sauce/sauce.service";
 import {CommonModule} from "@angular/common";
-import {Sauce} from "../../models/food-menu-models/sauce/sauce";
+import {Sauce} from "../../../models/food-menu-models/sauce/sauce";
 import {HttpClientModule} from "@angular/common/http";
 
 @Component({
