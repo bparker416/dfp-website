@@ -1,1 +1,9 @@
-<p>dessert works!</p>
+<div class="d-flex justify-content-center">
+  <div class="text-start">
+    <h3>Something Sweet.</h3>
+    <div *ngFor="let dessert of desserts">
+      <h4>{{ dessert.dessert_name }}  {{ dessert.dessert_price }}</h4>
+      <p>{{ dessert.dessert_description }}</p>
+    </div>
+  </div>
+</div>

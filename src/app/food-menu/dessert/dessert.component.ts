@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {DessertService} from "../../models/food-menu-models/dessert/dessert.service";
 import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-dessert',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './dessert.component.html',
   styleUrl: './dessert.component.css'
 })

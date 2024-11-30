@@ -17,6 +17,7 @@ import {CheeseComponent} from "../cheese/cheese.component";
 import {MeatComponent} from "../meat/meat.component";
 import {VeggieComponent} from "../veggie/veggie.component";
 import {ByoComponent} from "../byo/byo.component";
+import {DessertComponent} from "../dessert/dessert.component";
 
 @Component({
   selector: 'app-menu',
@@ -30,8 +31,9 @@ import {ByoComponent} from "../byo/byo.component";
     SaladComponent,
     SandoComponent,
     ByoComponent,
+    DessertComponent,
   ],
-  providers: [PizzaService, AppetizerService, SideService, SaladService, SandoService,],
+  providers: [PizzaService, AppetizerService, SideService, SaladService, SandoService],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
