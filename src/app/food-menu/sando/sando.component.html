@@ -5,7 +5,7 @@
     <div *ngFor="let sando of sandos">
       <h4>{{ sando.sando_name }}  {{ sando.sando_price }}</h4>
       <p>{{ sando.sando_description }}</p>
-      <p *ngIf="sando.additional_text">{{ sando.additional_text }}</p>
+      <p *ngIf="sando.additional_text">({{ sando.additional_text }})</p>
     </div>
   </div>
 </div>

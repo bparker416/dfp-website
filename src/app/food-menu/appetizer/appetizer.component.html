@@ -2,15 +2,9 @@
   <div class="text-start">
     <h3>Appetizer.</h3>
     <div *ngFor="let app of appetizers">
-      <div *ngIf="app.additional_text === null; else additionalText">
-        <h4>{{ app.app_name }} {{ app.app_price }}</h4>
-        <p>{{ app.app_description }}</p>
-      </div>
-      <ng-template #additionalText>
-        <h4>{{ app.app_name }} {{ app.app_price }}</h4>
-        <p>{{ app.app_description }}</p>
-        <p>({{ app.additional_text }})</p>
-      </ng-template>
+      <h4>{{ app.app_name }} {{ app.app_price }}</h4>
+      <p>{{ app.app_description }}</p>
+      <p *ngIf="app.additional_text !== null">{{ app.additional_text }}</p>
     </div>
   </div>
 </div>

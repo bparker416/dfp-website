@@ -8,7 +8,7 @@
         {{ cheese.cheese_name }} <span *ngIf="i < allCheeses.length - 1">•</span>
       </span>
       <ng-template #cheeseAddedPrice>
-        <span> {{ cheese.cheese_name }} (+${{ cheese.cheese_price }})<span *ngIf="i < allCheeses.length - 1">•</span></span>
+        <span> {{ cheese.cheese_name }} (+${{ cheese.cheese_price }})<span *ngIf="i < allCheeses.length - 1"> • </span></span>
       </ng-template>
     </span>
   </div>

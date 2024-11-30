@@ -4,7 +4,7 @@
   <!-- byo(Build Your Own) component displaying sauce list by name-->
  <div class="text-center">
    <span *ngFor="let sauce of sauces; let i = index">
-    {{ sauce.sauce_name }} <span *ngIf="i < sauces.length - 1" class="mx-2">•</span>
+     {{ sauce.sauce_name }}<span *ngIf="i < sauces.length - 1" class="mx-2"> • </span>
    </span>
  </div>
 </div>

@@ -6,6 +6,7 @@
         {{ pizza.pizza_name }}  {{ pizza.small_price }}/{{ pizza.large_price }}
       </h4>
       <p>{{ pizza.pizza_description }}</p>
+      <p *ngIf="pizza.additional_text !== null">{{ pizza.additional_text }}</p>
     </div>
   </div>
 </div>
