@@ -1,8 +1,10 @@
-<div class="container-fluid">
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <h3>PICK A SAUCE (No split sauce base)</h3>
 
   <!-- byo(Build Your Own) component displaying sauce list by name-->
-  <h3>PICK A SAUCE (No split sauce base)</h3>
-  <span *ngFor="let sauce of sauces; let i = index">
+ <div>
+   <span *ngFor="let sauce of sauces; let i = index">
     {{ sauce.sauce_name }} <span *ngIf="i < sauces.length - 1" class="mx-2">•</span>
-  </span>
+   </span>
+ </div>
 </div>

@@ -1,8 +1,11 @@
-<ul class="container-fluid">
-  <li *ngFor="let pizza of pizzas">
-    <h3>{{ pizza.pizza_name }}</h3>
-    <p>{{ pizza.pizza_description }}</p>
-    <p>{{ pizza.small_price }}</p>
-    <p>{{ pizza.large_price }}</p>
-  </li>
-</ul>
+<div class="d-flex justify-content-center">
+  <div class="text-start">
+    <h3>House Pie.</h3>
+    <div *ngFor="let pizza of pizzas; let i = index">
+      <h4>
+        {{ pizza.pizza_name }}  {{ pizza.small_price }}/{{ pizza.large_price }}
+      </h4>
+      <p>{{ pizza.pizza_description }}</p>
+    </div>
+  </div>
+</div>

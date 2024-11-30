@@ -1,8 +1,16 @@
-<ul class="container-fluid">
-  <li *ngFor="let sides of side">
-    <h3>{{ sides.side_name }}</h3>
-    <p>{{ sides.side_description }}</p>
-    <p>{{ sides.side_price }}</p>
-    <p>{{ sides.additional_text }}</p>
-  </li>
-</ul>
+<div class="d-flex justify-content-center">
+  <div class="text-start">
+    <h3>Sides.</h3>
+    <div *ngFor="let side of sides">
+      <div *ngIf="side.additional_text === null; else sidesAdditionalText">
+        <h4>{{ side.side_name }} {{ side.side_price }}</h4>
+        <p>{{ side.side_description }}</p>
+      </div>
+      <ng-template #sidesAdditionalText>
+        <h4>{{ side.side_name }} {{ side.side_price }}</h4>
+        <p>{{ side.side_description }}</p>
+        <p>({{ side.additional_text }})</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

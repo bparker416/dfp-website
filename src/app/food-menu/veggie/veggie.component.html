@@ -1,8 +1,10 @@
-<div class="container-fluid">
+<div class="d-flex flex-column justify-content-center align-items-center  ">
 
   <!-- byo(Build Your Own) component displaying veggie list by name-->
   <h3>VEGGIES, ETC.</h3>
-  <span *ngFor="let veggie of veggies; let i = index">
-    {{ veggie.veggie_name }}<span *ngIf="i < veggies.length - 1"> • </span>
-  </span>
+  <div>
+    <span *ngFor="let veggie of veggies; let i = index">
+      {{ veggie.veggie_name }}<span *ngIf="i < veggies.length - 1"> • </span>
+    </span>
+  </div>
 </div>

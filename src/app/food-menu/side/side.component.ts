@@ -10,11 +10,11 @@ import {SideService} from "../../models/food-menu-models/side/side.service";
   styleUrl: './side.component.css'
 })
 export class SideComponent implements OnInit {
-  side: any[] = [];
+  sides: any[] = [];
 
   constructor(private sideService: SideService) {}
 
   ngOnInit(): void {
-    this.sideService.getSides().subscribe((data) => {this.side = data});
+    this.sideService.getSides().subscribe((data) => {this.sides = data});
   }
 }
