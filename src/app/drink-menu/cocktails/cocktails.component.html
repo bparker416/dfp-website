@@ -1,1 +1,9 @@
-<p>cocktails works!</p>
+<div class="d-flex justify-content-start">
+  <div class="text-start">
+    <h3>House Cocktails.</h3>
+    <div *ngFor="let cocktail of cocktails">
+      <h4>{{ cocktail.cocktail_name }} {{ cocktail.cocktail_price }}</h4>
+      <p>{{ cocktail.cocktail_description }}</p>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {LibationsService} from "../../models/drink-menu-models/libations/libations.service";
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-libations',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './libations.component.html',
   styleUrl: './libations.component.css'
 })

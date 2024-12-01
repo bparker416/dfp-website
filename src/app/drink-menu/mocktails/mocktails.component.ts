@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {MocktailsService} from "../../models/drink-menu-models/mocktails/mocktails.service";
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-mocktails',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './mocktails.component.html',
   styleUrl: './mocktails.component.css'
 })

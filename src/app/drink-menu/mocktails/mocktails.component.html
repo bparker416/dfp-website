@@ -1,1 +1,8 @@
-<p>mocktails works!</p>
+<div class="d-flex justify-content-start">
+  <div class="text-start">
+    <h3>Mocktails.</h3>
+    <div *ngFor="let mocktail of mocktails">
+      <h4>{{ mocktail.mocktail_name }} ${{ mocktail.mocktail_price }} - {{ mocktail.mocktail_description }}</h4>
+    </div>
+  </div>
+</div>

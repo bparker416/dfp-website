@@ -1,1 +1,9 @@
-<p>libations works!</p>
+<div class="d-flex justify-content-start">
+  <div class="text-start">
+    <h3>Seasonal Libations.</h3>
+    <div *ngFor="let libation of libations">
+      <h4>{{ libation.libation_name }} {{ libation.libation_price }}</h4>
+      <p>{{ libation.libation_description }}</p>
+    </div>
+  </div>
+</div>

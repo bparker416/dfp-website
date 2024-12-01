@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {DrinksService} from "../../models/drink-menu-models/drinks/drinks.service";
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-drinks',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './drinks.component.html',
   styleUrl: './drinks.component.css'
 })
