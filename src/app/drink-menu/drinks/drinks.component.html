@@ -3,6 +3,8 @@
     <h3>Drinks.</h3>
     <div *ngFor="let drink of drinks">
       <h4>{{ drink.drink_name }} ${{ drink.drink_price }}<span *ngIf="drink.description !== null"> - {{ drink.drink_description }}</span></h4>
+    </div>
+    <div>
       <h4>Bottle Soda $4 / Can Soda $3</h4>
     </div>
   </div>
