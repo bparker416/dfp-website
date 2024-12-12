@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class SideService {
 
-  private apiUrl = 'http://localhost:8080/api/side';
+  private apiUrl = 'http://localhost:8080/api/public/side';
 
   constructor(private http: HttpClient) {}
 

@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class CocktailsService {
 
-  private apiUrl = 'http://localhost:8080/api/house-cocktails';
+  private apiUrl = 'http://localhost:8080/api/public/house-cocktails';
 
   constructor(private http: HttpClient) { }
 

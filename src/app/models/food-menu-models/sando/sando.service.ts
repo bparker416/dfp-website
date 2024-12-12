@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class SandoService {
 
-  private apiUrl = "http://localhost:8080/api/sando";
+  private apiUrl = "http://localhost:8080/api/public/sando";
 
   constructor(private http: HttpClient) { }
 

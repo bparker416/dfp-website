@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class MocktailsService {
 
-  private apiUrl = 'http://localhost:8080/api/mocktails';
+  private apiUrl = 'http://localhost:8080/api/public/mocktails';
 
   constructor(private http: HttpClient) { }
 

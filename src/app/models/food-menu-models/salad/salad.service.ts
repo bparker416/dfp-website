@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class SaladService {
 
-  private apiUrl = "http://localhost:8080/api/salad";
+  private apiUrl = "http://localhost:8080/api/public/salad";
 
   constructor(private http: HttpClient) {}
 

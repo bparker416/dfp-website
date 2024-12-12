@@ -7,8 +7,8 @@ import {Observable} from "rxjs";
 })
 export class MeatService {
 
-  private apiUrlThree = "http://localhost:8080/api/meat/price-is-three";
-  private apiUrlFour = "http://localhost:8080/api/meat/price-is-four";
+  private apiUrlThree = "http://localhost:8080/api/public/meat/price-is-three";
+  private apiUrlFour = "http://localhost:8080/api/public/meat/price-is-four";
 
   constructor(private http: HttpClient) {}
 

@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class LibationsService {
 
-  private apiUrl = 'http://localhost:8080/api/seasonal-libations';
+  private apiUrl = 'http://localhost:8080/api/public/seasonal-libations';
 
   constructor(private http: HttpClient) { }
 

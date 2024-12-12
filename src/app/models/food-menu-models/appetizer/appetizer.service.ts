@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class AppetizerService {
 
-  private apiUrl = 'http://localhost:8080/api/appetizer';
+  private apiUrl = 'http://localhost:8080/api/public/appetizer';
 
   constructor(private http: HttpClient) {}
 

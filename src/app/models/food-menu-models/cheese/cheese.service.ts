@@ -7,9 +7,9 @@ import {Observable} from "rxjs";
 })
 export class CheeseService {
 
-  private apiUrlRegular = "http://localhost:8080/api/cheese/price-is-regular";
-  private apiUrlOne = "http://localhost:8080/api/cheese/price-is-one";
-  private apiUrlTwo = "http://localhost:8080/api/cheese/price-is-two";
+  private apiUrlRegular = "http://localhost:8080/api/public/cheese/price-is-regular";
+  private apiUrlOne = "http://localhost:8080/api/public/cheese/price-is-one";
+  private apiUrlTwo = "http://localhost:8080/api/public/cheese/price-is-two";
 
   constructor(private http: HttpClient) {}
 
