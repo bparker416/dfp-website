@@ -1,29 +1,46 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {BehaviorSubject, Observable} from "rxjs";
+import {HttpClientModule} from "@angular/common/http";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = "http://localhost:8080";
-  private tokenKey = 'auth-token';
+  private baseUrl = "http://localhost:8080/api/public/auth";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/auth/login`, {username, password});
+    const loginData = { username, password };
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.post('${this.baseUrl}/login', loginData, {
+      headers,
+      withCredentials: true,
+    });
   }
 
-  setToken(token: string) {
-    localStorage.setItem(this.tokenKey, token);
+  logout(): Observable<any> {
+    return this.http.post('${this.baseUrl}/logout', {}, {
+      withCredentials: true,
+    });
   }
 
-  getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
-  }
-
-  isLoggedIn(): boolean {
-    return !!this.getToken();
+  isAuthenticated(): Observable<boolean> {
+    return new Observable(observer => {
+      this.http.get(`${this.baseUrl}/check`, { withCredentials: true })
+        .subscribe({
+          next: () => {
+            observer.next(true);
+            observer.complete();
+          },
+          error: () => {
+            observer.next(false);
+            observer.complete();
+          }
+        });
+    });
   }
 }
