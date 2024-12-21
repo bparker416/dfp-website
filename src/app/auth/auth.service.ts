@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClientModule} from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
@@ -13,17 +13,18 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    const loginData = { username, password };
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = new HttpParams()
+    .set('username', username)
+      .set('password', password);
 
-    return this.http.post('${this.baseUrl}/login', loginData, {
-      headers,
+    return this.http.post(`${this.baseUrl}/login`, body.toString(), {
+      headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'}),
       withCredentials: true,
     });
   }
 
   logout(): Observable<any> {
-    return this.http.post('${this.baseUrl}/logout', {}, {
+    return this.http.post(`${this.baseUrl}/logout`, {}, {
       withCredentials: true,
     });
   }
