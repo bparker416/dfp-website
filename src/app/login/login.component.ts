@@ -24,7 +24,7 @@ export class LoginComponent {
   onSubmit() {
     this.authService.login(this.username, this.password).subscribe({
       next: () => {
-        this.router.navigate(['/private/updates']);
+        this.router.navigate(['/updates']);
       },
       error: (err) => {
         if (err.status === 401) {
