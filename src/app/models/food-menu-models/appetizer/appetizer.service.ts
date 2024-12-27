@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Drinks} from "../../drink-menu-models/drinks/drinks";
+import {Appetizer} from "./appetizer";
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +15,25 @@ export class AppetizerService {
 
   getAppetizers(): Observable<any> {
     return this.http.get(this.apiUrl);
+  }
+
+  getAppetizersById(id: number): Observable<Appetizer> {
+    return this.http.get<Appetizer>(`${this.apiUrl}/${id}`);
+  }
+
+  createAppetizer(app: Appetizer): Observable<Appetizer> {
+    return this.http.post<Appetizer>(this.apiUrl, app);
+  }
+
+  updateAppetizer(id: number, app: Appetizer): Observable<Appetizer> {
+    return this.http.put<Appetizer>(`${this.apiUrl}/${id}`, app);
+  }
+
+  deleteAppetizer(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  toggleAppetizerActive(id: number): Observable<Appetizer> {
+    return this.http.put<Appetizer>(`${this.apiUrl}/${id}/toggle`, {});
   }
 }

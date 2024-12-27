@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Drinks} from "../../drink-menu-models/drinks/drinks";
+import {Dessert} from "./dessert";
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +17,23 @@ export class DessertService {
     return this.http.get(this.apiUrl);
   }
 
+  getDessertsById(id: number): Observable<Dessert> {
+    return this.http.get<Dessert>(`${this.apiUrl}/${id}`);
+  }
+
+  createDessert(dessert: Dessert): Observable<Dessert> {
+    return this.http.post<Dessert>(this.apiUrl, dessert);
+  }
+
+  updateDessert(id: number, dessert: Dessert): Observable<Dessert> {
+    return this.http.put<Dessert>(`${this.apiUrl}/${id}`, dessert);
+  }
+
+  deleteDessert(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  toggleDessertActive(id: number): Observable<Dessert> {
+    return this.http.put<Dessert>(`${this.apiUrl}/${id}/toggle`, {});
+  }
 }
