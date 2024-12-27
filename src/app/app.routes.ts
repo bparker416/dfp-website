@@ -7,7 +7,7 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {HomeComponent} from "./home/home.component";
 import {DrinkMenuComponent} from "./drink-menu/drink-menu/drink-menu.component";
 import {LoginComponent} from "./login/login.component";
-import {UpdatesComponent} from "./updates/updates.component";
+import {UpdatesComponent} from "./update-components/updates/updates.component";
 
 
 

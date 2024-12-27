@@ -1,0 +1,135 @@
+<div class="container mt-4">
+  <h2>Drinks</h2>
+
+  <!-- Button to initialize adding a new drink -->
+  <button class="btn btn-primary mb-3" (click)="initNewDrink()">Add New Drink</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Drink Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let drink of drinks">
+      <td>{{ drink.drink_id }}</td>
+      <td>{{ drink.drink_name }}</td>
+      <td>{{ drink.drink_price }}</td>
+      <td>{{ drink.drink_description }}</td>
+      <td>{{ drink.drink_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editDrink(drink)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteDrink(drink.drink_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleDrinkActive(drink.drink_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Drink</h4>
+    <form (ngSubmit)="saveDrink()">
+      <div class="mb-3">
+        <label>Drink Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentDrink.drink_name"
+          name="drink_name"
+          class="form-control"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentDrink.drink_price"
+          name="drink_price"
+          class="form-control"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentDrink.drink_description"
+          name="drink_description"
+          class="form-control"
+          required>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentDrink.drink_active"
+          name="drink_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Drink</h4>
+    <form (ngSubmit)="saveDrink()">
+      <div class="mb-3">
+        <label>Drink Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentDrink.drink_name"
+          name="drink_name"
+          class="form-control"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentDrink.drink_price"
+          name="drink_price"
+          class="form-control"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentDrink.drink_description"
+          name="drink_description"
+          class="form-control"
+          required>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentDrink.drink_active"
+          name="drink_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
