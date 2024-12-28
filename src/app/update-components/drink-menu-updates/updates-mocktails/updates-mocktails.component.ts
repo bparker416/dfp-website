@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Mocktails} from "../../models/drink-menu-models/mocktails/mocktails";
-import {MocktailsComponent} from "../../drink-menu/mocktails/mocktails.component";
-import {MocktailsService} from "../../models/drink-menu-models/mocktails/mocktails.service";
+import {Mocktails} from "../../../models/drink-menu-models/mocktails/mocktails";
+import {MocktailsComponent} from "../../../drink-menu/mocktails/mocktails.component";
+import {MocktailsService} from "../../../models/drink-menu-models/mocktails/mocktails.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Drinks} from "../../models/drink-menu-models/drinks/drinks";
-import {DrinksService} from "../../models/drink-menu-models/drinks/drinks.service";
-import {DrinksComponent} from "../../drink-menu/drinks/drinks.component";
+import {Drinks} from "../../../models/drink-menu-models/drinks/drinks";
+import {DrinksService} from "../../../models/drink-menu-models/drinks/drinks.service";
+import {DrinksComponent} from "../../../drink-menu/drinks/drinks.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";

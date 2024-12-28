@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Cocktails} from "../../models/drink-menu-models/cocktails/cocktails";
-import {CocktailsService} from "../../models/drink-menu-models/cocktails/cocktails.service";
+import {Cocktails} from "../../../models/drink-menu-models/cocktails/cocktails";
+import {CocktailsService} from "../../../models/drink-menu-models/cocktails/cocktails.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({

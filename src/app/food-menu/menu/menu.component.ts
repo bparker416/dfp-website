@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../header/header.component";
-import {PizzaListComponent} from "../pizza-list/pizza-list.component";
+import {PizzaComponent} from "../pizza/pizza.component";
 import {HttpClientModule} from "@angular/common/http";
 import {PizzaService} from "../../models/food-menu-models/pizza/pizza.service";
 import {AppetizerService} from "../../models/food-menu-models/appetizer/appetizer.service";
@@ -25,7 +25,7 @@ import {DessertService} from "../../models/food-menu-models/dessert/dessert.serv
   standalone: true,
   imports: [
     HeaderComponent,
-    PizzaListComponent,
+    PizzaComponent,
     AppetizerComponent,
     HttpClientModule,
     SideComponent,

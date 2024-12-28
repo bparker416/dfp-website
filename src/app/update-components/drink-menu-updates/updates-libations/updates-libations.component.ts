@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {LibationsComponent} from "../../drink-menu/libations/libations.component";
+import {LibationsComponent} from "../../../drink-menu/libations/libations.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {Libations} from "../../models/drink-menu-models/libations/libations";
-import {LibationsService} from "../../models/drink-menu-models/libations/libations.service";
+import {Libations} from "../../../models/drink-menu-models/libations/libations";
+import {LibationsService} from "../../../models/drink-menu-models/libations/libations.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {DrinksComponent} from "../../drink-menu/drinks/drinks.component";
-import {UpdatesDrinksComponent} from "../updates-drinks/updates-drinks.component";
+import {UpdatesDrinksComponent} from "../drink-menu-updates/updates-drinks/updates-drinks.component";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 

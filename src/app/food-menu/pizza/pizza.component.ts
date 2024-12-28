@@ -7,10 +7,10 @@ import {PizzaModule} from "../../models/food-menu-models/pizza/pizza";
   selector: 'app-pizza-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './pizza-list.component.html',
-  styleUrl: './pizza-list.component.css'
+  templateUrl: './pizza.component.html',
+  styleUrl: './pizza.component.css'
 })
-export class PizzaListComponent implements OnInit {
+export class PizzaComponent implements OnInit {
   pizzas: any[] = [];
 
   constructor(private pizzaService: PizzaService) {}
