@@ -15,6 +15,10 @@ export class MeatService {
 
   constructor(private http: HttpClient) {}
 
+  getAllMeat(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
+
   meatPriceByThree(): Observable<any> {
     return this.http.get(this.apiUrlThree);
   }

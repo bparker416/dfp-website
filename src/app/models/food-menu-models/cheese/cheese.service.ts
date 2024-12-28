@@ -16,6 +16,10 @@ export class CheeseService {
 
   constructor(private http: HttpClient) {}
 
+  getAllCheese(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
+
   cheesePriceIsRegular(): Observable<any> {
     return this.http.get(this.apiUrlRegular);
   }
