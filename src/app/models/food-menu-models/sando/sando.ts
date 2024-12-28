@@ -4,4 +4,5 @@ export interface Sando {
   sando_description: string;
   sando_price: number;
   additional_text: string;
+  sando_active: boolean;
 }

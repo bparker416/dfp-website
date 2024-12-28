@@ -55,7 +55,7 @@ export class UpdatesDrinksComponent implements OnInit {
 
   deleteDrink(id: number | undefined): void {
     if (!id) return;
-    if (confirm("Are you sure you want to delete this drink?")) {
+    if (confirm("Are you sure you want to delete this Drink?")) {
       this.drinksService.deleteDrink(id).subscribe({
         next: () => {
           this.drinks = this.drinks.filter((drink) => drink.id !== id);

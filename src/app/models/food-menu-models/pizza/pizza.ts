@@ -5,4 +5,5 @@ export interface PizzaModule {
   small_price: number;
   large_price: number;
   addition_text: string;
+  pizza_active: boolean;
 }

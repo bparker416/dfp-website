@@ -4,4 +4,5 @@ export interface Side {
   side_description: string;
   side_price: number;
   additional_text: string;
+  side_active: boolean;
 }

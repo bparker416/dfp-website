@@ -3,4 +3,5 @@ export interface Meat {
   meat_name: string;
   meat_description: string;
   meat_price: string;
+  meat_active: boolean;
 }

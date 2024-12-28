@@ -4,4 +4,5 @@ export interface Dessert {
   dessert_description: string;
   dessert_price: number;
   additional_text: string;
+  dessert_active: boolean;
 }

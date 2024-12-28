@@ -3,4 +3,5 @@ export interface Cocktails {
   cocktail_name: string;
   cocktail_price: number;
   cocktail_description: string;
+  cocktail_active: boolean;
 }

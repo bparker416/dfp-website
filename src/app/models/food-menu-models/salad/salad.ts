@@ -5,4 +5,5 @@ export interface Salad {
   small_price: number;
   large_price: number;
   additional_text: string;
+  salad_active: boolean;
 }

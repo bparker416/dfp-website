@@ -4,4 +4,5 @@ export interface Appetizer {
   app_description: string;
   app_price: number;
   additional_text: string;
+  app_active: boolean
 }
