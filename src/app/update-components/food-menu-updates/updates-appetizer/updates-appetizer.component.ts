@@ -3,11 +3,15 @@ import {Appetizer} from "../../../models/food-menu-models/appetizer/appetizer";
 import {AppetizerService} from "../../../models/food-menu-models/appetizer/appetizer.service";
 import {app} from "../../../../../server";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {AppetizerComponent} from "../../../food-menu/appetizer/appetizer.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-appetizer',
   standalone: true,
-  imports: [],
+  imports: [AppetizerComponent,FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-appetizer.component.html',
   styleUrl: './updates-appetizer.component.css'
 })

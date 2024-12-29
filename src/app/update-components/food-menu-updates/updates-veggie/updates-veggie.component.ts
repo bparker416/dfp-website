@@ -2,11 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {Veggie} from "../../../models/food-menu-models/veggie/veggie";
 import {VeggieService} from "../../../models/food-menu-models/veggie/veggie.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {VeggieComponent} from "../../../food-menu/build-your-own/veggie/veggie.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-veggie',
   standalone: true,
-  imports: [],
+  imports: [VeggieComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-veggie.component.html',
   styleUrl: './updates-veggie.component.css'
 })

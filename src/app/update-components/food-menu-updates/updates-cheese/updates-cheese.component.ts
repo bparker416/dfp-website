@@ -2,11 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {Cheese} from "../../../models/food-menu-models/cheese/cheese";
 import {CheeseService} from "../../../models/food-menu-models/cheese/cheese.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {CheeseComponent} from "../../../food-menu/build-your-own/cheese/cheese.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-cheese',
   standalone: true,
-  imports: [],
+  imports: [CheeseComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-cheese.component.html',
   styleUrl: './updates-cheese.component.css'
 })

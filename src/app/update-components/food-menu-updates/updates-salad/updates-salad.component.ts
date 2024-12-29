@@ -1,11 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Salad} from "../../../models/food-menu-models/salad/salad";
 import {SaladService} from "../../../models/food-menu-models/salad/salad.service";
+import {SaladComponent} from "../../../food-menu/salad/salad.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-salad',
   standalone: true,
-  imports: [],
+  imports: [SaladComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-salad.component.html',
   styleUrl: './updates-salad.component.css'
 })

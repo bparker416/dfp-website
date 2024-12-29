@@ -2,11 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {Meat} from "../../../models/food-menu-models/meat/meat";
 import {MeatService} from "../../../models/food-menu-models/meat/meat.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {MeatComponent} from "../../../food-menu/build-your-own/meat/meat.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-meat',
   standalone: true,
-  imports: [],
+  imports: [MeatComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-meat.component.html',
   styleUrl: './updates-meat.component.css'
 })

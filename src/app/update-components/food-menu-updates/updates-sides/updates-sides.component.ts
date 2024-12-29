@@ -2,11 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {Side} from "../../../models/food-menu-models/side/side";
 import {SideService} from "../../../models/food-menu-models/side/side.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {SideComponent} from "../../../food-menu/side/side.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sides',
   standalone: true,
-  imports: [],
+  imports: [SideComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-sides.component.html',
   styleUrl: './updates-sides.component.css'
 })

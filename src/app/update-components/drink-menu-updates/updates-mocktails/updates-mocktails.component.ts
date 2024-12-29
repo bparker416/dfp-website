@@ -96,9 +96,9 @@ export class UpdatesMocktailsComponent implements OnInit {
             mocktail_active: false
             };
           },
-        error: (err) => console.error("Could not update.", err)
-      });
-    } else {
+          error: (err) => console.error("Could not update.", err)
+        });
+      } else {
       // Create new mocktails
       this.mocktailService.createMocktail(this.currentMocktail).subscribe({
         next: (updateMocktail) => {
@@ -112,8 +112,7 @@ export class UpdatesMocktailsComponent implements OnInit {
             mocktail_active: false
           };
         },
-        error
-        : (err) => console.error("Could not create.", err)
+        error: (err) => console.error("Could not create.", err)
       });
     }
   }

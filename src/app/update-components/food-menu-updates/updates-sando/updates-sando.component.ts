@@ -1,11 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Sando} from "../../../models/food-menu-models/sando/sando";
 import {SandoService} from "../../../models/food-menu-models/sando/sando.service";
+import {SandoComponent} from "../../../food-menu/sando/sando.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sando',
   standalone: true,
-  imports: [],
+  imports: [SandoComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-sando.component.html',
   styleUrl: './updates-sando.component.css'
 })

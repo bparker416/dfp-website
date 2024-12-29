@@ -1,11 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Sauce} from "../../../models/food-menu-models/sauce/sauce";
 import {SauceService} from "../../../models/food-menu-models/sauce/sauce.service";
+import {SauceComponent} from "../../../food-menu/build-your-own/sauce/sauce.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sauce',
   standalone: true,
-  imports: [],
+  imports: [SauceComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-sauce.component.html',
   styleUrl: './updates-sauce.component.css'
 })
