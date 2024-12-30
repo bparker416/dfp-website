@@ -1,1 +1,167 @@
-<p>updates-appetizer works!</p>
+<div class="container mt-4">
+  <h2>Appetizers</h2>
+
+  <!-- Button to initialize adding a new appetizer -->
+  <button class="btn btn-primary mb-3" (click)="initNewApp()">Add New Appetizer</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Drink Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Additional Info</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let app of apps">
+      <td>{{ app.app_id }}</td>
+      <td>{{ app.app_name }}</td>
+      <td>{{ app.app_price }}</td>
+      <td>{{ app.app_description }}</td>
+      <td>{{ app.additional_text }}</td>
+      <td>{{ app.app_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editApp(app)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteApp(app.app_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleAppActive(app.app_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Appetizer</h4>
+    <form (ngSubmit)="saveApp()">
+      <div class="mb-3">
+        <label>Appetizer Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentApps.app_name"
+          name="app_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentApps.app_price"
+          name="app_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentApps.app_description"
+          name="app_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentApps.additional_text"
+          name="addition_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentApps.app_active"
+          name="app_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Appetizer</h4>
+    <form (ngSubmit)="saveApp()">
+      <div class="mb-3">
+        <label>Appetizer Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentApps.app_name"
+          name="app_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentApps.app_price"
+          name="app_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentApps.app_description"
+          name="app_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentApps.additional_text"
+          name="addition_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentApps.app_active"
+          name="app_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

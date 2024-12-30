@@ -10,12 +10,15 @@ import {CocktailsComponent} from "../../drink-menu/cocktails/cocktails.component
 import {UpdatesCocktailsComponent} from "../drink-menu-updates/updates-cocktails/updates-cocktails.component";
 import {UpdatesMocktailsComponent} from "../drink-menu-updates/updates-mocktails/updates-mocktails.component";
 import {RouterLink, RouterLinkActive} from "@angular/router";
+import {UpdatesAppetizerComponent} from "../food-menu-updates/updates-appetizer/updates-appetizer.component";
+import {UpdatesMeatComponent} from "../food-menu-updates/updates-meat/updates-meat.component";
+import {UpdatesPizzaComponent} from "../food-menu-updates/updates-pizza/updates-pizza.component";
 
 @Component({
   selector: 'app-updates',
   standalone: true,
   imports: [
-    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink
+    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent
   ],
   templateUrl: './updates.component.html',
   styleUrl: './updates.component.css'

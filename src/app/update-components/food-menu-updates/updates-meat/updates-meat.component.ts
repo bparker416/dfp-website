@@ -15,7 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrl: './updates-meat.component.css'
 })
 export class UpdatesMeatComponent implements OnInit {
-  meat: any[] = [];
+  meats: any[] = [];
 
   currentMeat: Meat = {
     meat_id: 0,
@@ -30,14 +30,14 @@ export class UpdatesMeatComponent implements OnInit {
   constructor(private meatService: MeatService) { }
 
   ngOnInit(): void {
-    this.meatService.getAllMeat().subscribe((data) => { this.meat = data });
+    this.meatService.getAllMeat().subscribe((data) => { this.meats = data });
   }
 
   loadMeat(): void {
-    this.meatService.getAllMeat().subscribe((data) => { this.meat = data });
+    this.meatService.getAllMeat().subscribe((data) => { this.meats = data });
   }
 
-  initNewDrink(): void {
+  initNewMeat(): void {
     this.isEditMode = false;
     this.currentMeat = {
       meat_id: 0,
@@ -59,7 +59,7 @@ export class UpdatesMeatComponent implements OnInit {
     if (confirm("Are you sure you want to delete this Meat?")) {
       this.meatService.deleteMeat(id).subscribe({
         next: () => {
-          this.meat = this.meat.filter((meat) => meat.id !== id);
+          this.meats = this.meats.filter((meat) => meat.id !== id);
         }
       });
     }
@@ -69,9 +69,9 @@ export class UpdatesMeatComponent implements OnInit {
     if (!id) return;
     this.meatService.toggleMeatActive(id).subscribe({
       next: (updateMeat) => {
-        const index = this.meat.findIndex((meat) => meat.meat_id === updateMeat.meat_id);
+        const index = this.meats.findIndex((meat) => meat.meat_id === updateMeat.meat_id);
         if (index !== -1) {
-          this.meat[index] = updateMeat;
+          this.meats[index] = updateMeat;
         }
       }
     });
@@ -82,9 +82,9 @@ export class UpdatesMeatComponent implements OnInit {
       // Update existing meats
       this.meatService.updateMeat(this.currentMeat.meat_id, this.currentMeat).subscribe({
         next: (updateMeat) => {
-          const index = this.meat.findIndex((meat) => meat.meat_id === updateMeat.meat_id);
+          const index = this.meats.findIndex((meat) => meat.meat_id === updateMeat.meat_id);
           if (index !== -1) {
-            this.meat[index] = updateMeat;
+            this.meats[index] = updateMeat;
           }
           // Form reset
           this.isEditMode = false;
@@ -102,7 +102,7 @@ export class UpdatesMeatComponent implements OnInit {
       // Create new meats
       this.meatService.createMeat(this.currentMeat).subscribe({
         next: (updateMeat) => {
-          this.meat.push(updateMeat);
+          this.meats.push(updateMeat);
           // Form reset
           this.currentMeat = {
             meat_id: 0,

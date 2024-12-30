@@ -1,1 +1,190 @@
-<p>updates-pizza works!</p>
+<div class="container mt-4">
+  <h2>Pizzas</h2>
+
+  <!-- Button to initialize adding a new pizza -->
+  <button class="btn btn-primary mb-3" (click)="initNewPizza()">Add New Pizza</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Pizza Name</th>
+      <th>Small Price</th>
+      <th>Large Price</th>
+      <th>Description</th>
+      <th>Additional Info</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pizza of pizzas">
+      <td>{{ pizza.pizza_id }}</td>
+      <td>{{ pizza.pizza_name }}</td>
+      <td>{{ pizza.pizza_price }}</td>
+      <td>{{ pizza.pizza_description }}</td>
+      <td>{{ pizza.additional_text }}</td>
+      <td>{{ pizza.pizza_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editPizza(pizza)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deletePizza(pizza.pizza_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="togglePizzaActive(pizza.pizza_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Pizza</h4>
+    <form (ngSubmit)="savePizza()">
+      <div class="mb-3">
+        <label>Pizza Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentPizza.pizza_name"
+          name="pizza_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Small Price field -->
+      <div class="mb-3">
+        <label>Small Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentPizza.small_price"
+          name="small_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Large Price field -->
+      <div class="mb-3">
+        <label>Large Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentPizza.large_price"
+          name="large_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentPizza.pizza_description"
+          name="pizza_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentPizza.additional_text"
+          name="additional_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentPizza.pizza_active"
+          name="pizza_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Pizza</h4>
+    <form (ngSubmit)="savePizza()">
+      <div class="mb-3">
+        <label>Pizza Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentPizza.pizza_name"
+          name="pizza_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Small Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentPizza.small_price"
+          name="small_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Large Price field -->
+      <div class="mb-3">
+        <label>Large Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentPizza.large_price"
+          name="large_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentPizza.pizza_description"
+          name="pizza_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentPizza.additional_text"
+          name="additional_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentPizza.pizza_active"
+          name="app_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

@@ -9,14 +9,14 @@ import {Meat} from "./meat";
 })
 export class MeatService {
 
-  private apiUrl = 'http://localhost:8080/api/public/meats';
+  private apiUrl = 'http://localhost:8080/api/public/meat';
   private apiUrlThree = "http://localhost:8080/api/public/meat/price-is-three";
   private apiUrlFour = "http://localhost:8080/api/public/meat/price-is-four";
 
   constructor(private http: HttpClient) {}
 
   getAllMeat(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
   }
 
   meatPriceByThree(): Observable<any> {

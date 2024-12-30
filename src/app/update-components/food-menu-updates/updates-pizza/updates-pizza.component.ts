@@ -2,11 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import {PizzaModule} from "../../../models/food-menu-models/pizza/pizza";
 import {PizzaService} from "../../../models/food-menu-models/pizza/pizza.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-updates-pizza',
   standalone: true,
-  imports: [],
+    imports: [
+        FormsModule,
+        NgForOf,
+        NgIf,
+        ReactiveFormsModule
+    ],
   templateUrl: './updates-pizza.component.html',
   styleUrl: './updates-pizza.component.css'
 })
