@@ -1,1 +1,143 @@
-<p>updates-cocktails works!</p>
+<div class="container mt-4">
+  <h2>House Cocktails</h2>
+
+  <!-- Button to initialize adding a new cocktail -->
+  <button class="btn btn-primary mb-3" (click)="initNewCocktail()">Add New Cocktail</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>House Cocktail Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cocktail of cocktails">
+      <td>{{ cocktail.cocktail_id }}</td>
+      <td>{{ cocktail.cocktail_name }}</td>
+      <td>{{ cocktail.cocktail_price }}</td>
+      <td>{{ cocktail.cocktail_description }}</td>
+      <td>{{ cocktail.cocktail_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editCocktail(cocktail)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteCocktail(cocktail.mocktail_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleCocktailActive(cocktail.cocktail_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New House Cocktail</h4>
+    <form (ngSubmit)="saveCocktail()">
+      <div class="mb-3">
+        <label>House Cocktail Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentCocktail.cocktail_name"
+          name="cocktail_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentCocktail.cocktail_price"
+          name="cocktail_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentCocktail.cocktail_description"
+          name="cocktail_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Cocktail active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentCocktail.cocktail_active"
+          name="cocktail_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit House Cocktail</h4>
+    <form (ngSubmit)="saveCocktail()">
+      <div class="mb-3">
+        <label>House Cocktail Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentCocktail.cocktail_name"
+          name="cocktail_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentCocktail.cocktail_price"
+          name="cocktail_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentCocktail.cocktail_description"
+          name="cocktail_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Cocktail active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentCocktail.cocktail_active"
+          name="cocktail_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

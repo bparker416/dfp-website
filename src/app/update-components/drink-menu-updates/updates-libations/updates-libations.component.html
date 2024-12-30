@@ -1,1 +1,143 @@
-<p>updates-libations works!</p>
+<div class="container mt-4">
+  <h2>Seasonal Libations</h2>
+
+  <!-- Button to initialize adding a new seasonal libation -->
+  <button class="btn btn-primary mb-3" (click)="initNewLibation()">Add New Seasonal Libation</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Seasonal Libation Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let libation of libations">
+      <td>{{ libation.libation_id }}</td>
+      <td>{{ libation.libation_name }}</td>
+      <td>{{ libation.libation_price }}</td>
+      <td>{{ libation.libation_description }}</td>
+      <td>{{ libation.libation_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editLibation(libation)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteLibation(libation.libation_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleLibationActive(libation.libation_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Drink</h4>
+    <form (ngSubmit)="saveLibation()">
+      <div class="mb-3">
+        <label>Seasonal Libation Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentLibation.libation_name"
+          name="libation_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentLibation.libation_price"
+          name="libation_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentLibation.libation_description"
+          name="libation_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Mocktail active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentLibation.libation_active"
+          name="libation_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Seasonal Libation</h4>
+    <form (ngSubmit)="saveLibation()">
+      <div class="mb-3">
+        <label>Seasonal Libation Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentLibation.libation_name"
+          name="libation_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentLibation.libation_price"
+          name="libation_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentLibation.libation_description"
+          name="libation_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Drink active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentLibation.libation_active"
+          name="libation_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

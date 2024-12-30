@@ -2,11 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import {Cocktails} from "../../../models/drink-menu-models/cocktails/cocktails";
 import {CocktailsService} from "../../../models/drink-menu-models/cocktails/cocktails.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-updates-cocktails',
   standalone: true,
-  imports: [],
+    imports: [
+        FormsModule,
+        NgForOf,
+        NgIf,
+        ReactiveFormsModule
+    ],
   templateUrl: './updates-cocktails.component.html',
   styleUrl: './updates-cocktails.component.css'
 })

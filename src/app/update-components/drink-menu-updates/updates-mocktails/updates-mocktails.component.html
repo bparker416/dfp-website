@@ -1,1 +1,143 @@
-<p>updates-mocktails works!</p>
+<div class="container mt-4">
+  <h2>Mocktails</h2>
+
+  <!-- Button to initialize adding a new mocktail -->
+  <button class="btn btn-primary mb-3" (click)="initNewMocktail()">Add New Mocktail</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Mocktail Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let mocktail of mocktails">
+      <td>{{ mocktail.mocktail_id }}</td>
+      <td>{{ mocktail.mocktail_name }}</td>
+      <td>{{ mocktail.mocktail_price }}</td>
+      <td>{{ mocktail.mocktail_description }}</td>
+      <td>{{ mocktail.mocktail_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editMocktail(mocktail)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteMocktail(mocktail.mocktail_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleMocktailActive(mocktail.mocktail_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Mocktail</h4>
+    <form (ngSubmit)="saveMocktail()">
+      <div class="mb-3">
+        <label>Mocktail Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentMocktail.mocktail_name"
+          name="mocktail_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentMocktail.mocktail_price"
+          name="mocktail_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentMocktail.mocktail_description"
+          name="mocktail_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Mocktail active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentMocktail.mocktail_active"
+          name="mocktail_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Mocktail</h4>
+    <form (ngSubmit)="saveMocktail()">
+      <div class="mb-3">
+        <label>Mocktail Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentMocktail.mocktail_name"
+          name="mocktail_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentMocktail.mocktail_price"
+          name="mocktail_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentMocktail.mocktail_description"
+          name="mocktail_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Mocktail active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentMocktail.mocktail_active"
+          name="mocktail_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

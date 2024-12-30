@@ -1,1 +1,45 @@
+<div class="container mt-4">
+  <ul class="nav nav-tabs">
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-cocktails']">
+        House Cocktails
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-libations']">
+        Seasonal Libations
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-mocktails']">
+        Mocktails
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-drinks']">
+        Drinks
+      </a>
+    </li>
+  </ul>
+</div>
+
 <app-updates-drinks></app-updates-drinks>
+<app-updates-libations></app-updates-libations>
+<app-updates-mocktails></app-updates-mocktails>
+<app-updates-cocktails></app-updates-cocktails>
