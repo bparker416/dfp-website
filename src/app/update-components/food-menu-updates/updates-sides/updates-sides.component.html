@@ -1,1 +1,167 @@
-<p>updates-sides works!</p>
+<div class="container mt-4">
+  <h2>Sides</h2>
+
+  <!-- Button to initialize adding a new side -->
+  <button class="btn btn-primary mb-3" (click)="initNewSide()">Add New Side</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Side Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Additional Info</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let side of sides">
+      <td>{{ side.side_id }}</td>
+      <td>{{ side.side_name }}</td>
+      <td>{{ side.side_price }}</td>
+      <td>{{ side.side_description }}</td>
+      <td>{{ side.additional_text }}</td>
+      <td>{{ side.app_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editSide(side)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteSide(side.side_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleSideActive(side.side_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Side</h4>
+    <form (ngSubmit)="saveSide()">
+      <div class="mb-3">
+        <label>Side Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSide.side_name"
+          name="side_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentSide.side_price"
+          name="side_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSide.side_description"
+          name="side_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSide.additional_text"
+          name="addition_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentSide.side_active"
+          name="side_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Side</h4>
+    <form (ngSubmit)="saveSide()">
+      <div class="mb-3">
+        <label>Side Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSide.side_name"
+          name="side_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentSide.side_price"
+          name="side_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSide.side_description"
+          name="side_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSide.additional_text"
+          name="addition_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Side active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentSide.side_active"
+          name="side_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

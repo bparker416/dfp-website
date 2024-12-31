@@ -1,1 +1,191 @@
-<p>updates-salad works!</p>
+<div class="container mt-4">
+  <h2>Salads</h2>
+
+  <!-- Button to initialize adding a new salad -->
+  <button class="btn btn-primary mb-3" (click)="initNewSalad()">Add New Salad</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Salad Name</th>
+      <th>Small Price</th>
+      <th>Large Price</th>
+      <th>Description</th>
+      <th>Additional Info</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let salad of salads">
+      <td>{{ salad.salad_id }}</td>
+      <td>{{ salad.salad_name }}</td>
+      <td>{{ salad.small_price }}</td>
+      <td>{{ salad.large_price }}</td>
+      <td>{{ salad.salad_description }}</td>
+      <td>{{ salad.additional_text }}</td>
+      <td>{{ salad.salad_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editSalad(salad)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteSalad(salad.salad_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleSaladActive(salad.salad_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Salad</h4>
+    <form (ngSubmit)="saveSalad()">
+      <div class="mb-3">
+        <label>Salad Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSalad.salad_name"
+          name="salad_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Small Price field -->
+      <div class="mb-3">
+        <label>Small Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentSalad.small_price"
+          name="small_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Large Price field -->
+      <div class="mb-3">
+        <label>Large Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentSalad.large_price"
+          name="large_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSalad.salad_description"
+          name="salad_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSalad.additional_text"
+          name="additional_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentSalad.salad_active"
+          name="salad_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Salad</h4>
+    <form (ngSubmit)="saveSalad()">
+      <div class="mb-3">
+        <label>Salad Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSalad.salad_name"
+          name="salad_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Small Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentSalad.small_price"
+          name="small_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Large Price field -->
+      <div class="mb-3">
+        <label>Large Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentSalad.large_price"
+          name="large_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSalad.salad_description"
+          name="salad_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Additional info field -->
+      <div class="mb-3">
+        <label>Additional Info</label>
+        <input
+          type="text"
+          [(ngModel)]="currentSalad.additional_text"
+          name="additional_text"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- App active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentSalad.salad_active"
+          name="salad_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

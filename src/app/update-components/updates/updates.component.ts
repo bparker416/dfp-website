@@ -13,12 +13,17 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {UpdatesAppetizerComponent} from "../food-menu-updates/updates-appetizer/updates-appetizer.component";
 import {UpdatesMeatComponent} from "../food-menu-updates/updates-meat/updates-meat.component";
 import {UpdatesPizzaComponent} from "../food-menu-updates/updates-pizza/updates-pizza.component";
+import {UpdatesSaladComponent} from "../food-menu-updates/updates-salad/updates-salad.component";
+import {UpdatesSandoComponent} from "../food-menu-updates/updates-sando/updates-sando.component";
+import {UpdatesSauceComponent} from "../food-menu-updates/updates-sauce/updates-sauce.component";
+import {UpdatesSidesComponent} from "../food-menu-updates/updates-sides/updates-sides.component";
+import {UpdatesVeggieComponent} from "../food-menu-updates/updates-veggie/updates-veggie.component";
 
 @Component({
   selector: 'app-updates',
   standalone: true,
   imports: [
-    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent
+    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent
   ],
   templateUrl: './updates.component.html',
   styleUrl: './updates.component.css'

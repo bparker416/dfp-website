@@ -21,7 +21,8 @@
     <tr *ngFor="let pizza of pizzas">
       <td>{{ pizza.pizza_id }}</td>
       <td>{{ pizza.pizza_name }}</td>
-      <td>{{ pizza.pizza_price }}</td>
+      <td>{{ pizza.small_price }}</td>
+      <td>{{ pizza.large_price }}</td>
       <td>{{ pizza.pizza_description }}</td>
       <td>{{ pizza.additional_text }}</td>
       <td>{{ pizza.pizza_active ? 'Yes' : 'No' }}</td>

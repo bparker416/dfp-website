@@ -1,1 +1,119 @@
-<p>updates-veggie works!</p>
+<div class="container mt-4">
+  <h2>Veggies</h2>
+
+  <!-- Button to initialize adding a new veggie -->
+  <button class="btn btn-primary mb-3" (click)="initNewVeggie()">Add New Veggie</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Veggie Name</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let veggie of veggies">
+      <td>{{ veggie.veggie_id }}</td>
+      <td>{{ veggie.veggie_name }}</td>
+      <td>{{ veggie.veggie_description }}</td>
+      <td>{{ veggie.veggie_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editVeggie(veggie)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteVeggie(veggie.veggie_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleVeggieActive(veggie.veggie_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Veggie</h4>
+    <form (ngSubmit)="saveVeggie()">
+      <div class="mb-3">
+        <label>Veggie Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentVeggie.veggie_name"
+          name="veggie_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentVeggie.veggie_description"
+          name="veggie_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Veggie active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentVeggie.veggie_active"
+          name="veggie_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Veggie</h4>
+    <form (ngSubmit)="saveVeggie()">
+      <div class="mb-3">
+        <label>Veggie Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentVeggie.veggie_name"
+          name="veggie_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Description field -->
+      <div class="mb-3">
+        <label>Description</label>
+        <input
+          type="text"
+          [(ngModel)]="currentVeggie.veggie_description"
+          name="veggie_description"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Veggie active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentVeggie.veggie_active"
+          name="veggie_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
