@@ -30,7 +30,7 @@ export class LoginComponent {
         if (err.status === 401) {
           this.errorMessage = 'Invalid login info.';
         } else {
-          this.errorMessage = 'Something happened. No idea why. Scot probably broke it.';
+          this.errorMessage = 'Something happened. No idea why.Contact Jake, who will contact me. Or text me.';
         }
       }
     });

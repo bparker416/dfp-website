@@ -36,8 +36,97 @@
         Drinks
       </a>
     </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-appetizer']">
+        Appetizers
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-sides']">
+        Sides
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-salad']">
+        Salads
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-sando']">
+        Sandos
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-sauce']">
+        Sauce
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-cheese']">
+        Cheese
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-veggies']">
+        Veggies
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-meat']">
+        Meats
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-pizza']">
+        Pizza
+      </a>
+    </li>
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" [routerLink]="['updates-dessert']">
+        Desserts
+      </a>
+    </li>
   </ul>
 </div>
 
-<app-updates-cheese></app-updates-cheese>
-<app-updates-dessert></app-updates-dessert>
+<router-outlet></router-outlet>

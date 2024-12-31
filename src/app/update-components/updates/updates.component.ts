@@ -9,7 +9,7 @@ import {UpdatesLibationsComponent} from "../drink-menu-updates/updates-libations
 import {CocktailsComponent} from "../../drink-menu/cocktails/cocktails.component";
 import {UpdatesCocktailsComponent} from "../drink-menu-updates/updates-cocktails/updates-cocktails.component";
 import {UpdatesMocktailsComponent} from "../drink-menu-updates/updates-mocktails/updates-mocktails.component";
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {UpdatesAppetizerComponent} from "../food-menu-updates/updates-appetizer/updates-appetizer.component";
 import {UpdatesMeatComponent} from "../food-menu-updates/updates-meat/updates-meat.component";
 import {UpdatesPizzaComponent} from "../food-menu-updates/updates-pizza/updates-pizza.component";
@@ -25,7 +25,7 @@ import {UpdatesDessertComponent} from "../food-menu-updates/updates-dessert/upda
   selector: 'app-updates',
   standalone: true,
   imports: [
-    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent, UpdatesCheeseComponent, UpdatesDessertComponent
+    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent, UpdatesCheeseComponent, UpdatesDessertComponent, RouterOutlet
   ],
   templateUrl: './updates.component.html',
   styleUrl: './updates.component.css'
