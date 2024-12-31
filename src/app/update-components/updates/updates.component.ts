@@ -18,12 +18,14 @@ import {UpdatesSandoComponent} from "../food-menu-updates/updates-sando/updates-
 import {UpdatesSauceComponent} from "../food-menu-updates/updates-sauce/updates-sauce.component";
 import {UpdatesSidesComponent} from "../food-menu-updates/updates-sides/updates-sides.component";
 import {UpdatesVeggieComponent} from "../food-menu-updates/updates-veggie/updates-veggie.component";
+import {UpdatesCheeseComponent} from "../food-menu-updates/updates-cheese/updates-cheese.component";
+import {UpdatesDessertComponent} from "../food-menu-updates/updates-dessert/updates-dessert.component";
 
 @Component({
   selector: 'app-updates',
   standalone: true,
   imports: [
-    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent
+    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent, UpdatesCheeseComponent, UpdatesDessertComponent
   ],
   templateUrl: './updates.component.html',
   styleUrl: './updates.component.css'

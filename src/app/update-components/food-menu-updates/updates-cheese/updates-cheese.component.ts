@@ -15,7 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrl: './updates-cheese.component.css'
 })
 export class UpdatesCheeseComponent implements OnInit {
-  cheese: any[] = [];
+  cheeses: any[] = [];
 
   currentCheese: Cheese = {
     cheese_id: 0,
@@ -29,11 +29,11 @@ export class UpdatesCheeseComponent implements OnInit {
   constructor(private cheeseService : CheeseService) { }
 
   ngOnInit(): void {
-    this.cheeseService.getAllCheese().subscribe((data) => { this.cheese = data });
+    this.cheeseService.getAllCheese().subscribe((data) => { this.cheeses = data });
   }
 
   loadCheese(): void {
-    this.cheeseService.getAllCheese().subscribe((data) => { this.cheese = data });
+    this.cheeseService.getAllCheese().subscribe((data) => { this.cheeses = data });
   }
 
   initNewCheese(): void {
@@ -57,7 +57,7 @@ export class UpdatesCheeseComponent implements OnInit {
     if (confirm("Are you sure you want to delete this Cheese?")) {
       this.cheeseService.deleteCheese(id).subscribe({
         next: () => {
-          this.cheese = this.cheese.filter((cheese) => cheese.id !== id);
+          this.cheeses = this.cheeses.filter((cheese) => cheese.id !== id);
         }
       });
     }
@@ -67,9 +67,9 @@ export class UpdatesCheeseComponent implements OnInit {
     if (!id) return;
     this.cheeseService.toggleCheeseActive(id).subscribe({
       next: (updateCheese) => {
-        const index = this.cheese.findIndex((cheese) => cheese.cheese_id === updateCheese.cheese_id);
+        const index = this.cheeses.findIndex((cheese) => cheese.cheese_id === updateCheese.cheese_id);
         if (index != -1) {
-          this.cheese[index] = updateCheese;
+          this.cheeses[index] = updateCheese;
         }
       }
     });
@@ -80,9 +80,9 @@ export class UpdatesCheeseComponent implements OnInit {
       // Update existing cheese
       this.cheeseService.updateCheese(this.currentCheese.cheese_id, this.currentCheese).subscribe({
         next: (updateCheese) => {
-          const index = this.cheese.findIndex((cheese) => cheese.cheese_id === updateCheese.cheese_id);
+          const index = this.cheeses.findIndex((cheese) => cheese.cheese_id === updateCheese.cheese_id);
           if (index !== -1) {
-            this.cheese[index] = updateCheese;
+            this.cheeses[index] = updateCheese;
           }
           // Form reset
           this.isEditMode = false;
@@ -99,7 +99,7 @@ export class UpdatesCheeseComponent implements OnInit {
       // Create new cheese
       this.cheeseService.createCheese(this.currentCheese).subscribe({
         next: (updateCheese) => {
-          this.cheese.push(updateCheese);
+          this.cheeses.push(updateCheese);
           // Form reset
           this.currentCheese = {
             cheese_id: 0,

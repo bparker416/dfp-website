@@ -1,1 +1,119 @@
-<p>updates-cheese works!</p>
+<div class="container mt-4">
+  <h2>Cheese</h2>
+
+  <!-- Button to initialize adding a new cheese -->
+  <button class="btn btn-primary mb-3" (click)="initNewCheese()">Add New Cheese</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cheese Name</th>
+      <th>Price</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cheese of cheeses">
+      <td>{{ cheese.cheese_id }}</td>
+      <td>{{ cheese.cheese_name }}</td>
+      <td>{{ cheese.cheese_price }}</td>
+      <td>{{ cheese.cheese_active ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" (click)="editCheese(cheese)">Edit</button>
+        <button class="btn btn-sm btn-danger me-2" (click)="deleteCheese(cheese.app_id)">Delete</button>
+        <button class="btn btn-sm btn-info" (click)="toggleCheeseActive(cheese.cheese_id)">
+          Toggle Active
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline form for create or update -->
+  <div class="card p-3" *ngIf="!isEditMode">
+    <h4>Add a New Cheese</h4>
+    <form (ngSubmit)="saveCheese()">
+      <div class="mb-3">
+        <label>Cheese Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentCheese.cheese_name"
+          name="cheese_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentCheese.cheese_price"
+          name="cheese_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Cheese active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentCheese.cheese_active"
+          name="cheese_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Create button -->
+      <button type="submit" class="btn btn-success">Create</button>
+    </form>
+  </div>
+
+  <!-- Inline form for editing -->
+  <div class="card p-3" *ngIf="isEditMode">
+    <h4>Edit Cheese</h4>
+    <form (ngSubmit)="saveCheese()">
+      <div class="mb-3">
+        <label>Cheese Name</label>
+        <input
+          type="text"
+          [(ngModel)]="currentCheese.cheese_name"
+          name="cheese_name"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Price field -->
+      <div class="mb-3">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="currentCheese.cheese_price"
+          name="cheese_price"
+          class="form-control"
+          required>
+      </div>
+
+      <!-- Cheese active toggle checkbox -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          [(ngModel)]="currentCheese.cheese_active"
+          name="cheese_active"
+          class="form-check-input">
+        <label class="form-check-label">Active</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="isEditMode = false">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
