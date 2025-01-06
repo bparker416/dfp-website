@@ -29,6 +29,7 @@ import {UpdatesMeatComponent} from "./update-components/food-menu-updates/update
 import {UpdatesPizzaComponent} from "./update-components/food-menu-updates/updates-pizza/updates-pizza.component";
 import {UpdatesDessertComponent} from "./update-components/food-menu-updates/updates-dessert/updates-dessert.component";
 import {authGuard} from "./auth/auth.guard";
+import {LoginComponent} from "./login/login.component";
 
 
 export const routes: Routes = [
@@ -38,8 +39,8 @@ export const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'drinks', component: DrinkMenuComponent },
   { path: 'social-events', component: SocialEventsComponent },
-  { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)},
-  { path: 'updates', canActivate: [authGuard], loadComponent: () => import('./update-components/updates/updates.component').then(m => m.UpdatesComponent), children: [
+  { path: 'login', component: LoginComponent},
+  { path: 'updates', canActivate: [authGuard], canActivateChild: [authGuard], component: UpdatesComponent, children: [
       {
         path : 'updates-cocktails',
         component: UpdatesCocktailsComponent
