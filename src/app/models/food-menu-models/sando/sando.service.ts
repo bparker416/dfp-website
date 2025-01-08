@@ -14,7 +14,11 @@ export class SandoService {
   constructor(private http: HttpClient) { }
 
   getSandos(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveSandos(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getSandosById(id: number): Observable<Sando> {

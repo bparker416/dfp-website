@@ -14,7 +14,11 @@ export class LibationsService {
   constructor(private http: HttpClient) { }
 
   getLibations(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveLibations(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`)
   }
 
   getLibationsById(id: number): Observable<Libations> {

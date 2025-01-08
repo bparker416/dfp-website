@@ -14,7 +14,11 @@ export class SaladService {
   constructor(private http: HttpClient) {}
 
   getSalads(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveSalads(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getSaladsById(id: number): Observable<Salad> {

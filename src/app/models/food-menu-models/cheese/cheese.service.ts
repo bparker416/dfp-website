@@ -20,6 +20,10 @@ export class CheeseService {
     return this.http.get(`${this.apiUrl}/all`);
   }
 
+  getActiveCheese(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
+  }
+
   cheesePriceIsRegular(): Observable<any> {
     return this.http.get(this.apiUrlRegular);
   }

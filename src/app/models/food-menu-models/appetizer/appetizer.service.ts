@@ -14,7 +14,11 @@ export class AppetizerService {
   constructor(private http: HttpClient) {}
 
   getAppetizers(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveAppetizers(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getAppetizersById(id: number): Observable<Appetizer> {

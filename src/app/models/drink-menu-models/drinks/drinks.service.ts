@@ -13,7 +13,11 @@ export class DrinksService {
   constructor(private http: HttpClient) { }
 
   getDrinks(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveDrinks(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getDrinksById(id: number): Observable<Drinks> {

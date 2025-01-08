@@ -13,7 +13,11 @@ export class VeggieService {
   constructor(private http: HttpClient) { }
 
   getVeggies(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveVeggies(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getVeggiesById(id: number): Observable<Veggie> {

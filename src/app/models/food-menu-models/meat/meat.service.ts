@@ -19,6 +19,10 @@ export class MeatService {
     return this.http.get(`${this.apiUrl}/all`);
   }
 
+  getActiveMeat(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
+  }
+
   meatPriceByThree(): Observable<any> {
     return this.http.get(this.apiUrlThree);
   }

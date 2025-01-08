@@ -14,7 +14,11 @@ export class MocktailsService {
   constructor(private http: HttpClient) { }
 
   getMocktails(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveMocktails(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getMocktailsById(id: number): Observable<Mocktails> {

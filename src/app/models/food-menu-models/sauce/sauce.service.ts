@@ -9,12 +9,16 @@ import {Sauce} from "./sauce";
 })
 export class SauceService {
 
-  private apiUrl = "http://localhost:8080/api/public/sauce/sauce-active";
+  private apiUrl = "http://localhost:8080/api/public/sauce";
 
   constructor(private http: HttpClient) { }
 
   getSauces(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveSauces(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getSaucesById(id: number): Observable<Sauce> {

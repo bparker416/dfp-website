@@ -14,7 +14,11 @@ export class PizzaService {
   constructor(private http: HttpClient) {}
 
   getPizzas(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActivePizzas(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getPizzaById(id: number): Observable<PizzaModule> {

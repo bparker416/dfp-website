@@ -14,7 +14,11 @@ export class DessertService {
   constructor(private http: HttpClient) {}
 
   getDesserts(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveDesserts(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getDessertsById(id: number): Observable<Dessert> {

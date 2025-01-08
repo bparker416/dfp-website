@@ -14,7 +14,11 @@ export class SideService {
   constructor(private http: HttpClient) {}
 
   getSides(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/all`);
+  }
+
+  getActiveSides(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active`);
   }
 
   getSidesById(id: number): Observable<Side> {
