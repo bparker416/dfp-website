@@ -22,7 +22,7 @@ export class UpdatesMocktailsComponent implements OnInit {
     mocktail_name: '',
     mocktail_price: 0,
     mocktail_description: '',
-    mocktail_active: true
+    mocktail_active: false
   };
 
   isEditMode = false;

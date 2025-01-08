@@ -23,7 +23,7 @@
       <td>{{ side.side_price }}</td>
       <td>{{ side.side_description }}</td>
       <td>{{ side.additional_text }}</td>
-      <td>{{ side.app_active ? 'Yes' : 'No' }}</td>
+      <td>{{ side.side_active ? 'Yes' : 'No' }}</td>
       <td>
         <button class="btn btn-sm btn-warning me-2" (click)="editSide(side)">Edit</button>
         <button class="btn btn-sm btn-danger me-2" (click)="deleteSide(side.side_id)">Delete</button>

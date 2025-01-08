@@ -20,6 +20,8 @@ import {UpdatesSidesComponent} from "../food-menu-updates/updates-sides/updates-
 import {UpdatesVeggieComponent} from "../food-menu-updates/updates-veggie/updates-veggie.component";
 import {UpdatesCheeseComponent} from "../food-menu-updates/updates-cheese/updates-cheese.component";
 import {UpdatesDessertComponent} from "../food-menu-updates/updates-dessert/updates-dessert.component";
+import {DrinksService} from "../../models/drink-menu-models/drinks/drinks.service";
+import {DessertService} from "../../models/food-menu-models/dessert/dessert.service";
 
 @Component({
   selector: 'app-updates',

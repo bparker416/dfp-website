@@ -23,7 +23,7 @@
       <td>{{ dessert.dessert_price }}</td>
       <td>{{ dessert.dessert_description }}</td>
       <td>{{ dessert.additional_text }}</td>
-      <td>{{ dessert.app_active ? 'Yes' : 'No' }}</td>
+      <td>{{ dessert.dessert_active ? 'Yes' : 'No' }}</td>
       <td>
         <button class="btn btn-sm btn-warning me-2" (click)="editDessert(dessert)">Edit</button>
         <button class="btn btn-sm btn-danger me-2" (click)="deleteDessert(dessert.dessert_id)">Delete</button>
@@ -99,7 +99,7 @@
 
   <!-- Inline form for editing -->
   <div class="card p-3" *ngIf="isEditMode">
-    <h4>Edit Appetizer</h4>
+    <h4>Edit Dessert</h4>
     <form (ngSubmit)="saveDessert()">
       <div class="mb-3">
         <label>Dessert Name</label>
@@ -139,7 +139,7 @@
         <input
           type="text"
           [(ngModel)]="currentDessert.additional_text"
-          name="addition_text"
+          name="additional_text"
           class="form-control"
           required>
       </div>
