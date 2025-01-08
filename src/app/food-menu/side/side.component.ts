@@ -15,6 +15,6 @@ export class SideComponent implements OnInit {
   constructor(private sideService: SideService) {}
 
   ngOnInit(): void {
-    this.sideService.getSides().subscribe((data) => {this.sides = data});
+    this.sideService.getActiveSides().subscribe((data) => {this.sides = data});
   }
 }

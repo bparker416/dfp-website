@@ -17,6 +17,6 @@ export class SauceComponent implements OnInit {
   constructor(private sauceService: SauceService) { }
 
   ngOnInit(): void {
-    this.sauceService.getSauces().subscribe( (data) => { this.sauces = data });
+    this.sauceService.getActiveSauces().subscribe( (data) => { this.sauces = data });
   }
 }

@@ -16,6 +16,6 @@ export class CocktailsComponent implements OnInit {
   constructor(private cocktailService: CocktailsService) {}
 
   ngOnInit(): void {
-    this.cocktailService.getCocktails().subscribe( (data) => { this.cocktails = data });
+    this.cocktailService.getActiveCocktails().subscribe( (data) => { this.cocktails = data });
   }
 }

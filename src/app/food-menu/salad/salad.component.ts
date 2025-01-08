@@ -15,6 +15,6 @@ export class SaladComponent implements OnInit {
   constructor(private saladService: SaladService) { }
 
   ngOnInit(): void {
-    this.saladService.getSalads().subscribe((data) => {this.salads = data});
+    this.saladService.getActiveSalads().subscribe((data) => {this.salads = data});
   }
 }

@@ -15,6 +15,6 @@ export class VeggieComponent implements OnInit {
   constructor(private veggieService: VeggieService) { }
 
   ngOnInit(): void {
-    this.veggieService.getVeggies().subscribe( (data) => { this.veggies = data });
+    this.veggieService.getActiveVeggies().subscribe( (data) => { this.veggies = data });
   }
 }

@@ -16,6 +16,6 @@ export class LibationsComponent implements OnInit {
   constructor(private libationsService: LibationsService) { }
 
   ngOnInit():void {
-    this.libationsService.getLibations().subscribe((data) => {this.libations = data});
+    this.libationsService.getActiveLibations().subscribe((data) => {this.libations = data});
   }
 }

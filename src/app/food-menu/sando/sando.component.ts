@@ -15,6 +15,6 @@ export class SandoComponent implements OnInit {
   constructor(private sandoService: SandoService) { }
 
   ngOnInit(): void {
-    this.sandoService.getSandos().subscribe((data) => {this.sandos = data});
+    this.sandoService.getActiveSandos().subscribe((data) => {this.sandos = data});
   }
 }

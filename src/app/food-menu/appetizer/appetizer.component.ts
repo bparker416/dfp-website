@@ -15,7 +15,7 @@ export class AppetizerComponent implements OnInit{
   constructor(private appetizerService: AppetizerService) {}
 
   ngOnInit(): void {
-    this.appetizerService.getAppetizers().subscribe((data) => {this.appetizers = data});
+    this.appetizerService.getActiveAppetizers().subscribe((data) => {this.appetizers = data});
   }
 
 }

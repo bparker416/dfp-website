@@ -16,7 +16,7 @@ export class MocktailsComponent implements OnInit {
   constructor(private mocktailsService: MocktailsService) { }
 
   ngOnInit(): void {
-    this.mocktailsService.getMocktails().subscribe((data) => this.mocktails = data);
+    this.mocktailsService.getActiveMocktails().subscribe((data) => this.mocktails = data);
   }
 
 }

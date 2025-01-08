@@ -16,6 +16,6 @@ export class DessertComponent implements OnInit {
   constructor(private dessertService: DessertService) { }
 
   ngOnInit(): void {
-    this.dessertService.getDesserts().subscribe( (data) => { this.desserts = data });
+    this.dessertService.getActiveDesserts().subscribe( (data) => { this.desserts = data });
   }
 }
