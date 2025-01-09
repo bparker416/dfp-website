@@ -10,12 +10,12 @@ import {AppetizerService} from "../../models/food-menu-models/appetizer/appetize
   styleUrl: './appetizer.component.css'
 })
 export class AppetizerComponent implements OnInit{
-  appetizers: any[] = [];
+  apps: any[] = [];
 
   constructor(private appetizerService: AppetizerService) {}
 
   ngOnInit(): void {
-    this.appetizerService.getActiveAppetizers().subscribe((data) => {this.appetizers = data});
+    this.appetizerService.getActiveAppetizers().subscribe((data) => {this.apps = data});
   }
 
 }

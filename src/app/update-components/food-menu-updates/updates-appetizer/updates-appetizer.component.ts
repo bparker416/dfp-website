@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Appetizer} from "../../../models/food-menu-models/appetizer/appetizer";
 import {AppetizerService} from "../../../models/food-menu-models/appetizer/appetizer.service";
-import {app} from "../../../../../server";
-import {error} from "@angular/compiler-cli/src/transformers/util";
 import {AppetizerComponent} from "../../../food-menu/appetizer/appetizer.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
@@ -11,7 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 @Component({
   selector: 'app-updates-appetizer',
   standalone: true,
-  imports: [AppetizerComponent,FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [AppetizerComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
   templateUrl: './updates-appetizer.component.html',
   styleUrl: './updates-appetizer.component.css'
 })
@@ -21,8 +19,8 @@ export class UpdatesAppetizerComponent implements OnInit {
   currentApps: Appetizer = {
     app_id: 0,
     app_name: '',
-    app_price: 0,
     app_description: '',
+    app_price: 0,
     additional_text: '',
     app_active: false
   };
@@ -44,8 +42,8 @@ export class UpdatesAppetizerComponent implements OnInit {
     this.currentApps = {
       app_id: 0,
       app_name: '',
-      app_price: 0,
       app_description: '',
+      app_price: 0,
       additional_text: '',
       app_active: false
     };
@@ -72,7 +70,7 @@ export class UpdatesAppetizerComponent implements OnInit {
     if (!id) return;
     this.appService.toggleAppetizerActive(id).subscribe({
       next: (updateApp) => {
-        const index = this.apps.findIndex((apps) => apps.app_id === updateApp.app_id);
+        const index = this.apps.findIndex((app) => app.app_id === updateApp.app_id);
         if (index !== -1) {
           this.apps[index] = updateApp;
         }
@@ -101,6 +99,23 @@ export class UpdatesAppetizerComponent implements OnInit {
           };
         },
         error: (err) => console.error("Could not update.", err)
+      });
+    } else {
+      // Create new Apps
+      this.appService.createAppetizer(this.currentApps).subscribe({
+        next: (updateApp) => {
+          this.apps.push(updateApp);
+          // Form reset
+          this.currentApps = {
+            app_id: 0,
+            app_name: '',
+            app_price: 0,
+            app_description: '',
+            additional_text: '',
+            app_active: false
+          };
+        },
+        error: (err) => console.error("Could not create.", err)
       });
     }
   }
