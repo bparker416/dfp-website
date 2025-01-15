@@ -39,4 +39,5 @@ export class MocktailsService {
   toggleMocktailActive(id: number): Observable<Mocktails> {
     return this.http.put<Mocktails>(`${this.apiUrl}/${id}/toggle`, {});
   }
+
 }

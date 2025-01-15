@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-start">
   <div class="text-start">
     <h3>Appetizer.</h3>
-    <div *ngFor="let app of appetizers">
+    <div *ngFor="let app of apps">
       <h4>{{ app.app_name }} {{ app.app_price }}</h4>
       <p>{{ app.app_description }}</p>
       <p *ngIf="app.additional_text !== null">{{ app.additional_text }}</p>

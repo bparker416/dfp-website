@@ -22,6 +22,7 @@ import {UpdatesCheeseComponent} from "../food-menu-updates/updates-cheese/update
 import {UpdatesDessertComponent} from "../food-menu-updates/updates-dessert/updates-dessert.component";
 import {DrinksService} from "../../models/drink-menu-models/drinks/drinks.service";
 import {DessertService} from "../../models/food-menu-models/dessert/dessert.service";
+import {SearchService} from "../../models/menu-search/search.service";
 
 @Component({
   selector: 'app-updates',
@@ -33,7 +34,24 @@ import {DessertService} from "../../models/food-menu-models/dessert/dessert.serv
   styleUrl: './updates.component.css'
 })
 export class UpdatesComponent {
+  searchQuery: string = '';
+  menuResults: string[] = [];
 
-  constructor() {
+  constructor(private searchService: SearchService) {}
+
+  // Food/drink menu unified item search
+  search() {
+    if (this.searchQuery.trim() !== '') {
+      this.searchService.searchMenuItems(this.searchQuery).subscribe(
+        (data) => {
+          this.menuResults = data;
+        },
+        (error) => {
+          console.error('Could not get items', error)
+        }
+      );
+    } else {
+      this.menuResults = [];
+    }
   }
 }

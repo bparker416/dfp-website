@@ -1,3 +1,5 @@
+<!-- Navigation bar to switch between views. Each view for each menu components will have CRUD operation enabled -->
+
 <div class="container mt-4">
   <ul class="nav nav-tabs">
     <li
@@ -128,5 +130,33 @@
     </li>
   </ul>
 </div>
+
+<!-- Search functionality to search all menu items by name and return and list including all items that match -->
+
+<div class="container">
+  <h2>Search the Menu</h2>
+
+  <div class="search-box">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Search for an item..."
+      (keyup.enter)="search()"
+    />
+    <button (click)="search()">Search</button>
+  </div>
+
+  <div *ngIf="menuResults.length > 0">
+    <h3>Matching Menu Items:</h3>
+    <ul>
+      <li *ngFor="let item of menuResults">{{ item }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="menuResults.length === 0 && searchQuery">
+    <p>No matches found.</p>
+  </div>
+</div>
+
 
 <router-outlet></router-outlet>
