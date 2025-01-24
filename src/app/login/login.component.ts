@@ -20,7 +20,8 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router, private http: HttpClient) {}
+  constructor(private authService: AuthService, private router: Router, private http: HttpClient) {
+  }
 
   onSubmit() {
     const body = {
@@ -28,41 +29,21 @@ export class LoginComponent {
       password: this.password
     };
 
-      this.http.post('damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/auth/login', body, {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
-        withCredentials: true
-      })
-        .subscribe({
-          next: () => {
-            this.router.navigate(['/updates']).then(() => console.log('Successfully logged in'));
-          },
-          error: err => {
-            if (err.status === 401) {
-              this.errorMessage = 'Login info bad.'
-            } else {
-              this.errorMessage = 'Idk man';
-            }
+    this.http.post('damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/auth/login', body, {
+      headers: new HttpHeaders({'Content-Type': 'application/json'}),
+      withCredentials: true
+    })
+      .subscribe({
+        next: () => {
+          this.router.navigate(['/updates']).then(() => console.log('Successfully logged in'));
+        },
+        error: err => {
+          if (err.status === 401) {
+            this.errorMessage = 'Login info bad.'
+          } else {
+            this.errorMessage = 'Idk man';
           }
-        });
-  }
-
-
-
-
-
-  /*
-  onSubmit() {
-    this.authService.login(this.username, this.password).subscribe({
-      next: () => {
-        this.router.navigate(['/updates']);
-      },
-      error: (err) => {
-        if (err.status === 401) {
-          this.errorMessage = 'Invalid login info.';
-        } else {
-          this.errorMessage = 'Something happened. No idea why. Contact Jake, who will contact me. Or just contact me.';
         }
-      }
-    });
-  }*/
+      });
+  }
 }
