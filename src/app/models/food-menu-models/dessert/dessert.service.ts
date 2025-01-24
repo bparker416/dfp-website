@@ -8,7 +8,7 @@ import {Dessert} from "./dessert";
 })
 export class DessertService {
 
-  private apiUrl = "http://localhost:8080/api/public/dessert";
+  private apiUrl = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/dessert";
 
   constructor(private http: HttpClient) {}
 

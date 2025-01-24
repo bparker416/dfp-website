@@ -8,7 +8,7 @@ import {Veggie} from "./veggie";
 })
 export class VeggieService {
 
-  private apiUrl = "http://localhost:8080/api/public/veggie";
+  private apiUrl = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/veggie";
 
   constructor(private http: HttpClient) { }
 

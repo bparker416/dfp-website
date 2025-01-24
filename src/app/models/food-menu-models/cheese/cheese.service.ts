@@ -9,10 +9,10 @@ import {Cheese} from "./cheese";
 })
 export class CheeseService {
 
-  private apiUrl = "http://localhost:8080/api/public/cheese";
-  private apiUrlRegular = "http://localhost:8080/api/public/cheese/price-is-regular";
-  private apiUrlOne = "http://localhost:8080/api/public/cheese/price-is-one";
-  private apiUrlTwo = "http://localhost:8080/api/public/cheese/price-is-two";
+  private apiUrl = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/cheese";
+  private apiUrlRegular = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/cheese/price-is-regular";
+  private apiUrlOne = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/cheese/price-is-one";
+  private apiUrlTwo = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/cheese/price-is-two";
 
   constructor(private http: HttpClient) {}
 

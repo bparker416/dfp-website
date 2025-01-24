@@ -9,7 +9,7 @@ import {Cocktails} from "./cocktails";
 })
 export class CocktailsService {
 
-  private apiUrl = 'http://localhost:8080/api/public/house-cocktails';
+  private apiUrl = 'damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/house-cocktails';
 
   constructor(private http: HttpClient) { }
 
