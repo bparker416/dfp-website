@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:dfp-website": "node dist/dfp-website/server/server.mjs"
+    "serve:ssr:dfp-website": "node dist/dfp-website/server/server.mjs",
+    "deploy": "ng build --output-path=docs --base-href=/<repository-name>/"
   },
   "private": true,
   "dependencies": {
