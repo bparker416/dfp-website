@@ -44,6 +44,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist/dfp-website"
           github_id_token: ${{ steps.idtoken.outputs.result }}
+          app_artifact_location: "dist/dfp-website"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
