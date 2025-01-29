@@ -10,7 +10,7 @@
     "serve:ssr:dfp-website": "node dist/dfp-website/server/server.mjs",
     "deploy": "ng build --configuration=production"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/cli": "^17.3.11",
     "@angular/animations": "^17.3.0",
