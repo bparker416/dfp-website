@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {DrinksComponent} from "../../drink-menu/drinks/drinks.component";
 import {UpdatesDrinksComponent} from "../drink-menu-updates/updates-drinks/updates-drinks.component";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {LibationsComponent} from "../../drink-menu/libations/libations.component";
 import {UpdatesLibationsComponent} from "../drink-menu-updates/updates-libations/updates-libations.component";
@@ -28,7 +28,11 @@ import {SearchService} from "../../models/menu-search/search.service";
   selector: 'app-updates',
   standalone: true,
   imports: [
-    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent, UpdatesCheeseComponent, UpdatesDessertComponent, RouterOutlet
+    FormsModule, DrinksComponent, LibationsComponent, CocktailsComponent, UpdatesDrinksComponent, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule, CommonModule, UpdatesLibationsComponent, UpdatesCocktailsComponent, UpdatesMocktailsComponent, RouterLinkActive, RouterLink, UpdatesAppetizerComponent, UpdatesMeatComponent, UpdatesPizzaComponent, UpdatesSaladComponent, UpdatesSandoComponent, UpdatesSauceComponent, UpdatesSidesComponent, UpdatesVeggieComponent, UpdatesCheeseComponent, UpdatesDessertComponent, RouterOutlet
   ],
   templateUrl: './updates.component.html',
   styleUrl: './updates.component.css'

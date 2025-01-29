@@ -4,12 +4,16 @@ import {SauceService} from "../../../models/food-menu-models/sauce/sauce.service
 import {SauceComponent} from "../../../food-menu/build-your-own/sauce/sauce.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sauce',
   standalone: true,
-  imports: [SauceComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [SauceComponent, FormsModule, NgIf, NgForOf, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
   templateUrl: './updates-sauce.component.html',
   styleUrl: './updates-sauce.component.css'
 })

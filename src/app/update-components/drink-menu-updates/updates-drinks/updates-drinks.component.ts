@@ -4,12 +4,16 @@ import {DrinksService} from "../../../models/drink-menu-models/drinks/drinks.ser
 import {DrinksComponent} from "../../../drink-menu/drinks/drinks.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-drinks',
   standalone: true,
-  imports: [DrinksComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [DrinksComponent, FormsModule, NgIf, NgForOf, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
   templateUrl: './updates-drinks.component.html',
   styleUrl: './updates-drinks.component.css'
 })

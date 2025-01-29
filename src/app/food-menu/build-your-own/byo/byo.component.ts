@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {SauceComponent} from "../sauce/sauce.component";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {SauceService} from "../../../models/food-menu-models/sauce/sauce.service";
 import {CheeseService} from "../../../models/food-menu-models/cheese/cheese.service";
 import {CheeseComponent} from "../cheese/cheese.component";
@@ -13,7 +13,11 @@ import {MeatService} from "../../../models/food-menu-models/meat/meat.service";
 @Component({
   selector: 'app-byo',
   standalone: true,
-  imports: [CommonModule, SauceComponent, HttpClientModule, CheeseComponent, VeggieComponent, MeatComponent],
+  imports: [CommonModule, SauceComponent, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule, CheeseComponent, VeggieComponent, MeatComponent],
   providers: [HttpClientModule, SauceService, CheeseService, VeggieService, MeatService],
   templateUrl: './byo.component.html',
   styleUrl: './byo.component.css'

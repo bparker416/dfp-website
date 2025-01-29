@@ -4,7 +4,7 @@ import {DrinksComponent} from "../drinks/drinks.component";
 import {CocktailsComponent} from "../cocktails/cocktails.component";
 import {LibationsComponent} from "../libations/libations.component";
 import {MocktailsComponent} from "../mocktails/mocktails.component";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {DrinksService} from "../../models/drink-menu-models/drinks/drinks.service";
 import {CocktailsService} from "../../models/drink-menu-models/cocktails/cocktails.service";
 import {AppetizerComponent} from "../../food-menu/appetizer/appetizer.component";
@@ -20,7 +20,11 @@ import {MocktailsService} from "../../models/drink-menu-models/mocktails/mocktai
 @Component({
   selector: 'app-drink-menu',
   standalone: true,
-    imports: [CommonModule, DrinksComponent, CocktailsComponent, LibationsComponent, MocktailsComponent, HttpClientModule, AppetizerComponent, ByoComponent, DessertComponent, PizzaComponent, SaladComponent, SandoComponent, SideComponent],
+    imports: [CommonModule, DrinksComponent, CocktailsComponent, LibationsComponent, MocktailsComponent, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule, AppetizerComponent, ByoComponent, DessertComponent, PizzaComponent, SaladComponent, SandoComponent, SideComponent],
   providers: [DrinksService, CocktailsService, LibationsService, MocktailsService],
   templateUrl: './drink-menu.component.html',
   styleUrl: './drink-menu.component.css'

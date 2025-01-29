@@ -5,12 +5,16 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 import {VeggieComponent} from "../../../food-menu/build-your-own/veggie/veggie.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-veggie',
   standalone: true,
-  imports: [VeggieComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [VeggieComponent, FormsModule, NgIf, NgForOf, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
   templateUrl: './updates-veggie.component.html',
   styleUrl: './updates-veggie.component.css'
 })

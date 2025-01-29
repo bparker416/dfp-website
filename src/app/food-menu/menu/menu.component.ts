@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../header/header.component";
 import {PizzaComponent} from "../pizza/pizza.component";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {PizzaService} from "../../models/food-menu-models/pizza/pizza.service";
 import {AppetizerService} from "../../models/food-menu-models/appetizer/appetizer.service";
 import {AppetizerComponent} from "../appetizer/appetizer.component";
@@ -22,7 +22,11 @@ import {DessertService} from "../../models/food-menu-models/dessert/dessert.serv
     HeaderComponent,
     PizzaComponent,
     AppetizerComponent,
-    HttpClientModule,
+    
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule,
     SideComponent,
     SaladComponent,
     SandoComponent,

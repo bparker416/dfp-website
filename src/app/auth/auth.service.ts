@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import {BehaviorSubject, catchError, map, Observable, of} from "rxjs";
 import {HttpClientModule} from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";

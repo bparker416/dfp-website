@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {LibationsComponent} from "../../../drink-menu/libations/libations.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {Libations} from "../../../models/drink-menu-models/libations/libations";
 import {LibationsService} from "../../../models/drink-menu-models/libations/libations.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
@@ -10,7 +10,11 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 @Component({
   selector: 'app-updates-libations',
   standalone: true,
-  imports: [LibationsComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [LibationsComponent, FormsModule, NgIf, NgForOf, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
   templateUrl: './updates-libations.component.html',
   styleUrl: './updates-libations.component.css'
 })

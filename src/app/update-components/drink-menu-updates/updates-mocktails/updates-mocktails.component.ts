@@ -5,12 +5,16 @@ import {MocktailsService} from "../../../models/drink-menu-models/mocktails/mock
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-mocktails',
   standalone: true,
-  imports: [MocktailsComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [MocktailsComponent, FormsModule, NgIf, NgForOf, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
   templateUrl: './updates-mocktails.component.html',
   styleUrl: './updates-mocktails.component.css'
 })

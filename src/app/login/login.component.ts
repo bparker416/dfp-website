@@ -3,14 +3,18 @@ import {AuthService} from "../auth/auth.service";
 import {Router} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {HttpClient, HttpClientModule, HttpHeaders, HttpParams} from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    FormsModule, CommonModule, HttpClientModule
+    FormsModule, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

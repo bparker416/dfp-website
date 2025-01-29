@@ -5,12 +5,16 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 import {SideComponent} from "../../../food-menu/side/side.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sides',
   standalone: true,
-  imports: [SideComponent, FormsModule, NgIf, NgForOf, CommonModule, HttpClientModule],
+  imports: [SideComponent, FormsModule, NgIf, NgForOf, CommonModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
   templateUrl: './updates-sides.component.html',
   styleUrl: './updates-sides.component.css'
 })
