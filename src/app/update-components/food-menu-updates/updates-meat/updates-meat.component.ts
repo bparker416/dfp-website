@@ -9,13 +9,13 @@ import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-meat',
-  standalone: true,
-  imports: [MeatComponent, FormsModule, NgIf, NgForOf, CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
+  imports: [MeatComponent, FormsModule, NgIf, NgForOf, CommonModule,
+    // TODO: `HttpClientModule` should not be imported into a component directly.
+    // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+    // application bootstrap logic and remove the `HttpClientModule` import from this component.
+  ],
   templateUrl: './updates-meat.component.html',
+  standalone: true,
   styleUrl: './updates-meat.component.css'
 })
 export class UpdatesMeatComponent implements OnInit {

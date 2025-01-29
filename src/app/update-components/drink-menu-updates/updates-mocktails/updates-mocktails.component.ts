@@ -8,15 +8,15 @@ import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {} from "@angular/common/http";
 
 @Component({
-  selector: 'app-updates-mocktails',
-  standalone: true,
-  imports: [MocktailsComponent, FormsModule, NgIf, NgForOf, CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
-  templateUrl: './updates-mocktails.component.html',
-  styleUrl: './updates-mocktails.component.css'
+    selector: 'app-updates-mocktails',
+    imports: [MocktailsComponent, FormsModule, NgIf, NgForOf, CommonModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        ],
+    templateUrl: './updates-mocktails.component.html',
+    standalone: true,
+    styleUrl: './updates-mocktails.component.css'
 })
 export class UpdatesMocktailsComponent implements OnInit {
   mocktails: any[] = [];

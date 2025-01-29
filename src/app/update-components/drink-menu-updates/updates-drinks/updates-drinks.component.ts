@@ -7,15 +7,15 @@ import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {} from "@angular/common/http";
 
 @Component({
-  selector: 'app-updates-drinks',
-  standalone: true,
-  imports: [DrinksComponent, FormsModule, NgIf, NgForOf, CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
-  templateUrl: './updates-drinks.component.html',
-  styleUrl: './updates-drinks.component.css'
+    selector: 'app-updates-drinks',
+    imports: [DrinksComponent, FormsModule, NgIf, NgForOf, CommonModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        ],
+    templateUrl: './updates-drinks.component.html',
+    standalone: true,
+    styleUrl: './updates-drinks.component.css'
 })
 export class UpdatesDrinksComponent implements OnInit {
   drinks: any[] = [];

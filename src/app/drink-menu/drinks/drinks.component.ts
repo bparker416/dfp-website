@@ -5,15 +5,15 @@ import {} from "@angular/common/http";
 import {Drinks} from "../../models/drink-menu-models/drinks/drinks";
 
 @Component({
-  selector: 'app-drinks',
-  standalone: true,
-  imports: [CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
-  templateUrl: './drinks.component.html',
-  styleUrl: './drinks.component.css'
+    selector: 'app-drinks',
+    imports: [CommonModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        ],
+    templateUrl: './drinks.component.html',
+    standalone: true,
+    styleUrl: './drinks.component.css'
 })
 export class DrinksComponent implements OnInit {
   drinks: any[] = [];

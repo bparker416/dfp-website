@@ -17,16 +17,13 @@ import {DessertService} from "../../models/food-menu-models/dessert/dessert.serv
 
 @Component({
   selector: 'app-menu',
-  standalone: true,
   imports: [
     HeaderComponent,
     PizzaComponent,
     AppetizerComponent,
-    
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule,
+    // TODO: `HttpClientModule` should not be imported into a component directly.
+    // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+    // application bootstrap logic and remove the `HttpClientModule` import from this component.
     SideComponent,
     SaladComponent,
     SandoComponent,
@@ -35,6 +32,7 @@ HttpClientModule,
   ],
   providers: [PizzaService, AppetizerService, SideService, SaladService, SandoService, DessertService],
   templateUrl: './menu.component.html',
+  standalone: true,
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {

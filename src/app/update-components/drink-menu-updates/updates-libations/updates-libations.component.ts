@@ -8,15 +8,15 @@ import {LibationsService} from "../../../models/drink-menu-models/libations/liba
 import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
-  selector: 'app-updates-libations',
-  standalone: true,
-  imports: [LibationsComponent, FormsModule, NgIf, NgForOf, CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
-  templateUrl: './updates-libations.component.html',
-  styleUrl: './updates-libations.component.css'
+    selector: 'app-updates-libations',
+    imports: [LibationsComponent, FormsModule, NgIf, NgForOf, CommonModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        ],
+    templateUrl: './updates-libations.component.html',
+    standalone: true,
+    styleUrl: './updates-libations.component.css'
 })
 export class UpdatesLibationsComponent implements OnInit {
   libations: any[] = [];

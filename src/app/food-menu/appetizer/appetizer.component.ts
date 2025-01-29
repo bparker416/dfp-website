@@ -4,9 +4,9 @@ import {AppetizerService} from "../../models/food-menu-models/appetizer/appetize
 
 @Component({
   selector: 'app-appetizer',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './appetizer.component.html',
+  standalone: true,
   styleUrl: './appetizer.component.css'
 })
 export class AppetizerComponent implements OnInit{

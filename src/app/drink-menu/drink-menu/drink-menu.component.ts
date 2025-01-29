@@ -18,16 +18,15 @@ import {LibationsService} from "../../models/drink-menu-models/libations/libatio
 import {MocktailsService} from "../../models/drink-menu-models/mocktails/mocktails.service";
 
 @Component({
-  selector: 'app-drink-menu',
-  standalone: true,
-    imports: [CommonModule, DrinksComponent, CocktailsComponent, LibationsComponent, MocktailsComponent, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule, AppetizerComponent, ByoComponent, DessertComponent, PizzaComponent, SaladComponent, SandoComponent, SideComponent],
-  providers: [DrinksService, CocktailsService, LibationsService, MocktailsService],
-  templateUrl: './drink-menu.component.html',
-  styleUrl: './drink-menu.component.css'
+    selector: 'app-drink-menu',
+    imports: [CommonModule, DrinksComponent, CocktailsComponent, LibationsComponent, MocktailsComponent,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        AppetizerComponent, ByoComponent, DessertComponent, PizzaComponent, SaladComponent, SandoComponent, SideComponent],
+    providers: [DrinksService, CocktailsService, LibationsService, MocktailsService],
+    templateUrl: './drink-menu.component.html',
+    styleUrl: './drink-menu.component.css'
 })
 export class DrinkMenuComponent {
   constructor(

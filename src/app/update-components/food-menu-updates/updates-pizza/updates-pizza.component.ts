@@ -7,14 +7,14 @@ import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-updates-pizza',
-  standalone: true,
-    imports: [
-        FormsModule,
-        NgForOf,
-        NgIf,
-        ReactiveFormsModule
-    ],
+  imports: [
+    FormsModule,
+    NgForOf,
+    NgIf,
+    ReactiveFormsModule
+  ],
   templateUrl: './updates-pizza.component.html',
+  standalone: true,
   styleUrl: './updates-pizza.component.css'
 })
 export class UpdatesPizzaComponent implements OnInit {

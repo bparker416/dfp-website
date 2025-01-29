@@ -4,15 +4,15 @@ import {CheeseService} from "../../../models/food-menu-models/cheese/cheese.serv
 import {} from "@angular/common/http";
 
 @Component({
-  selector: 'app-cheese',
-  standalone: true,
-  imports: [CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
-  templateUrl: './cheese.component.html',
-  styleUrl: './cheese.component.css'
+    selector: 'app-cheese',
+    imports: [CommonModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        ],
+    templateUrl: './cheese.component.html',
+    standalone: true,
+    styleUrl: './cheese.component.css'
 })
 export class CheeseComponent implements OnInit {
   allCheeses: any[] = [];

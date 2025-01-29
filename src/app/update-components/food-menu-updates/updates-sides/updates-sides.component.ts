@@ -9,13 +9,13 @@ import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sides',
-  standalone: true,
-  imports: [SideComponent, FormsModule, NgIf, NgForOf, CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
+  imports: [SideComponent, FormsModule, NgIf, NgForOf, CommonModule,
+    // TODO: `HttpClientModule` should not be imported into a component directly.
+    // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+    // application bootstrap logic and remove the `HttpClientModule` import from this component.
+  ],
   templateUrl: './updates-sides.component.html',
+  standalone: true,
   styleUrl: './updates-sides.component.css'
 })
 export class UpdatesSidesComponent implements OnInit {

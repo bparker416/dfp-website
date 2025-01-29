@@ -11,16 +11,16 @@ import {MeatComponent} from "../meat/meat.component";
 import {MeatService} from "../../../models/food-menu-models/meat/meat.service";
 
 @Component({
-  selector: 'app-byo',
-  standalone: true,
-  imports: [CommonModule, SauceComponent, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule, CheeseComponent, VeggieComponent, MeatComponent],
-  providers: [HttpClientModule, SauceService, CheeseService, VeggieService, MeatService],
-  templateUrl: './byo.component.html',
-  styleUrl: './byo.component.css'
+    selector: 'app-byo',
+    imports: [CommonModule, SauceComponent,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        CheeseComponent, VeggieComponent, MeatComponent],
+    providers: [ SauceService, CheeseService, VeggieService, MeatService],
+    templateUrl: './byo.component.html',
+    standalone: true,
+    styleUrl: './byo.component.css'
 })
 export class ByoComponent {
 

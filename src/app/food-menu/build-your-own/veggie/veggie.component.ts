@@ -4,9 +4,9 @@ import {VeggieService} from "../../../models/food-menu-models/veggie/veggie.serv
 
 @Component({
   selector: 'app-veggie',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './veggie.component.html',
+  standalone: true,
   styleUrl: './veggie.component.css'
 })
 export class VeggieComponent implements OnInit {

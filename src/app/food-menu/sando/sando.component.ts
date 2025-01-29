@@ -4,9 +4,9 @@ import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-sando',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './sando.component.html',
+  standalone: true,
   styleUrl: './sando.component.css'
 })
 export class SandoComponent implements OnInit {

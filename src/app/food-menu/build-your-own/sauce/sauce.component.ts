@@ -5,15 +5,15 @@ import {Sauce} from "../../../models/food-menu-models/sauce/sauce";
 import {} from "@angular/common/http";
 
 @Component({
-  selector: 'app-sauce',
-  standalone: true,
-  imports: [CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
-  templateUrl: './sauce.component.html',
-  styleUrl: './sauce.component.css'
+    selector: 'app-sauce',
+    imports: [CommonModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        ],
+    templateUrl: './sauce.component.html',
+    standalone: true,
+    styleUrl: './sauce.component.css'
 })
 export class SauceComponent implements OnInit {
   sauces: any[] = [];

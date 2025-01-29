@@ -8,13 +8,13 @@ import {} from "@angular/common/http";
 
 @Component({
   selector: 'app-updates-sando',
-  standalone: true,
-  imports: [SandoComponent, FormsModule, NgIf, NgForOf, CommonModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule],
+  imports: [SandoComponent, FormsModule, NgIf, NgForOf, CommonModule,
+    // TODO: `HttpClientModule` should not be imported into a component directly.
+    // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+    // application bootstrap logic and remove the `HttpClientModule` import from this component.
+  ],
   templateUrl: './updates-sando.component.html',
+  standalone: true,
   styleUrl: './updates-sando.component.css'
 })
 export class UpdatesSandoComponent implements OnInit {

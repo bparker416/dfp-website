@@ -6,16 +6,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
-  selector: 'app-updates-cocktails',
-  standalone: true,
+    selector: 'app-updates-cocktails',
     imports: [
         FormsModule,
         NgForOf,
         NgIf,
         ReactiveFormsModule
     ],
-  templateUrl: './updates-cocktails.component.html',
-  styleUrl: './updates-cocktails.component.css'
+    templateUrl: './updates-cocktails.component.html',
+    standalone: true,
+    styleUrl: './updates-cocktails.component.css'
 })
 export class UpdatesCocktailsComponent implements OnInit {
   cocktails: any[] = [];

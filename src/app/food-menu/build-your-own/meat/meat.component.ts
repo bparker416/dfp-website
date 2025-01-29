@@ -4,11 +4,11 @@ import {MeatService} from "../../../models/food-menu-models/meat/meat.service";
 import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-meat',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './meat.component.html',
-  styleUrl: './meat.component.css'
+    selector: 'app-meat',
+    imports: [CommonModule],
+    templateUrl: './meat.component.html',
+    standalone: true,
+    styleUrl: './meat.component.css'
 })
 export class MeatComponent implements OnInit {
   meatPriceByThree: any[] = [];
