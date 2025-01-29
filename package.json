@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^18.2.13",
     "@angular/platform-server": "^18.2.13",
     "@angular/router": "^18.2.13",
+    "@angular/ssr": "^18.2.13",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
