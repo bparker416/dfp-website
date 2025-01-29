@@ -4,7 +4,8 @@
     {
       "src": "angular.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist/dfp-website" }
+      "config": { "distDir": "dist/dfp-website" },
+      "installCommand": "npm install"
     }
   ],
   "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
