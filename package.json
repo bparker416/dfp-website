@@ -24,7 +24,6 @@
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "@angular/ssr": "^17.3.11",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
@@ -40,8 +39,5 @@
     "tslib": "^2.3.0",
     "typescript": "~5.4.2",
     "zone.js": "~0.14.3"
-  },
-  "engines": {
-    "node": "18.x"
   }
 }
