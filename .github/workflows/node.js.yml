@@ -38,4 +38,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: ./dist/dfp-website/browser  # Update this to your build output directory (e.g., ./dist/my-app)
+        publish_dir: ./dist/dfp-website # Update this to your build output directory (e.g., ./dist/my-app)
