@@ -42,9 +42,9 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "src" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist/dfp-website"
+          output_location: "dist/dfp-website/browser"
+          production_branch: "dev"
           github_id_token: ${{ steps.idtoken.outputs.result }}
-          app_artifact_location: "dist/dfp-website"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -59,4 +59,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_TREE_01A055D10 }}
           action: "close"
