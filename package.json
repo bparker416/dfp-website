@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration=development",
     "test": "ng test",
-    "serve:ssr:dfp-website": "node dist/dfp-website/server/server.mjs",
-    "deploy": "ng build --configuration=production"
+    "deploy": "ng build --configuration=production",
+    "vercel-build": "npm run build"
   },
   "private": false,
   "dependencies": {
