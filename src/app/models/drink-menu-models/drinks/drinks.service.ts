@@ -8,7 +8,7 @@ import {Drinks} from "./drinks";
 })
 export class DrinksService {
 
-  private apiUrl = 'damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/drinks';
+  private apiUrl = 'https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/drinks';
 
   constructor(private http: HttpClient) { }
 

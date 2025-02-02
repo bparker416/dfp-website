@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import {BehaviorSubject, catchError, map, Observable, of} from "rxjs";
-import {HttpClientModule} from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {response} from "express";
 
@@ -9,7 +8,7 @@ import {response} from "express";
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/auth";
+  private baseUrl = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/auth";
 
   constructor(private http: HttpClient) { }
 
@@ -43,6 +42,6 @@ export class AuthService {
   }
 
   getUpdates(): Observable<any> {
-    return this.http.get('damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/updates', {})
+    return this.http.get('https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/updates', {})
   }
 }

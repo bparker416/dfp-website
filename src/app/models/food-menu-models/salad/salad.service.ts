@@ -9,7 +9,7 @@ import {Salad} from "./salad";
 })
 export class SaladService {
 
-  private apiUrl = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/salad";
+  private apiUrl = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/salad";
 
   constructor(private http: HttpClient) {}
 

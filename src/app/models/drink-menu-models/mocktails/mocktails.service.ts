@@ -8,7 +8,7 @@ import {Mocktails} from "./mocktails";
 })
 export class MocktailsService {
 
-  private apiUrl = 'damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/mocktails';
+  private apiUrl = 'https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/mocktails';
 
   constructor(private http: HttpClient) { }
 

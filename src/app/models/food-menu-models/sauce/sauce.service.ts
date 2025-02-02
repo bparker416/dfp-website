@@ -9,7 +9,7 @@ import {Sauce} from "./sauce";
 })
 export class SauceService {
 
-  private apiUrl = "damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/sauce";
+  private apiUrl = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/sauce";
 
   constructor(private http: HttpClient) { }
 
