@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class SearchService {
-  private  apiUrl = 'https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/search';
+  private  apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/search';
 
   constructor(private http: HttpClient) { }
 

@@ -9,7 +9,7 @@ import {Sando} from "./sando";
 })
 export class SandoService {
 
-  private apiUrl = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/sando";
+  private apiUrl = "https://dfp-backend-iz97.onrender.com/api/public/sando";
 
   constructor(private http: HttpClient) { }
 

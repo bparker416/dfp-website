@@ -9,7 +9,7 @@ import {PizzaModule} from "./pizza";
 })
 export class PizzaService {
 
-  private apiUrl = 'https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/pizza';
+  private apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/pizza';
 
   constructor(private http: HttpClient) {}
 

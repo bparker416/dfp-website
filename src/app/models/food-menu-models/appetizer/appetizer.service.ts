@@ -9,7 +9,7 @@ import {Appetizer} from "./appetizer";
 })
 export class AppetizerService {
 
-  private apiUrl = 'https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/appetizer';
+  private apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/appetizer';
 
   constructor(private http: HttpClient) {}
 

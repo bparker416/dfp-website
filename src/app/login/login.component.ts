@@ -32,7 +32,7 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.http.post('https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/auth/login', body, {
+    this.http.post('https://dfp-backend-iz97.onrender.com/api/public/auth/login', body, {
       headers: new HttpHeaders({'Content-Type': 'application/json'}),
       withCredentials: true
     })

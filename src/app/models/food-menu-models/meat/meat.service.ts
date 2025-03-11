@@ -9,9 +9,9 @@ import {Meat} from "./meat";
 })
 export class MeatService {
 
-  private apiUrl = 'https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/meat';
-  private apiUrlThree = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/meat/price-is-three";
-  private apiUrlFour = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/meat/price-is-four";
+  private apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/meat';
+  private apiUrlThree = "https://dfp-backend-iz97.onrender.com/api/public/meat/price-is-three";
+  private apiUrlFour = "https://dfp-backend-iz97.onrender.com/api/public/meat/price-is-four";
 
   constructor(private http: HttpClient) {}
 

@@ -8,7 +8,7 @@ import {response} from "express";
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = "https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/api/public/auth";
+  private baseUrl = "https://dfp-backend-iz97.onrender.com/api/public/auth";
 
   constructor(private http: HttpClient) { }
 
@@ -42,6 +42,6 @@ export class AuthService {
   }
 
   getUpdates(): Observable<any> {
-    return this.http.get('https://damn-fine-backend-afbfc8gqe6e6cmh0.westus-01.azurewebsites.net/updates', {})
+    return this.http.get('https://dfp-backend-iz97.onrender.com/updates', {})
   }
 }
