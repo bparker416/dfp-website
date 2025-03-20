@@ -1,7 +1,7 @@
 .image-container {
   position: relative;
   height: 50vh;
-  width: 50%;
+  width: 50%; /* Keeps images side by side on desktop */
   overflow: hidden;
   margin: 0 !important;
   padding: 0 !important;
@@ -14,6 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -33,13 +34,24 @@
   border-left: 10px solid black;
 }
 
+/* Mobile styles - stack images vertically with black padding */
 @media (max-width: 767px) {
-  .row {
+  .image-wrapper {
     flex-direction: column;
+    border: none; /* Remove side borders */
   }
 
   .image-container {
-    padding: 20px 0; /* Adds black padding between stacked images */
-    background-color: black;
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height automatically */
+    padding: 20px 0; /* Add black padding between images */
+    background-color: black; /* Black padding background */
+  }
+
+  .background-image {
+    position: relative; /* Reset positioning for natural flow */
+    width: 100%;
+    height: auto;
+    display: block;
   }
 }
