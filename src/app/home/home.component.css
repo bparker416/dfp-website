@@ -1,3 +1,11 @@
+/* Ensure body and HTML don't have extra padding/margins */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  width: 100%;
+}
+
 .image-container {
   position: relative;
   height: 50vh;
