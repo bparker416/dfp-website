@@ -53,14 +53,17 @@ html, body {
 @media (max-width: 767px) {
   .image-wrapper {
     flex-direction: column;
+    align-items: center; /* Center images properly */
+    justify-content: center; /* Ensure no excess width */
     border: none; /* Remove side borders */
+    width: 100vw; /* Ensure it takes the full width */
   }
 
   .image-container {
-    width: 100%; /* Full width for mobile */
-    height: auto; /* Adjust height automatically */
-    padding: 20px 0; /* Add black padding between images */
-    background-color: black; /* Black padding background */
+    width: 100vw; /* Ensure it spans the full viewport width */
+    height: auto;
+    padding: 20px 0; /* Black padding between images */
+    background-color: black;
   }
 
   .background-image {
