@@ -29,5 +29,6 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  border: 2px black;
+  border-right: 10px solid black;
+  border-left: 10px solid black;
 }
