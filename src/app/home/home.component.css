@@ -32,3 +32,14 @@
   border-right: 10px solid black;
   border-left: 10px solid black;
 }
+
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .image-container {
+    padding: 20px 0; /* Adds black padding between stacked images */
+    background-color: black;
+  }
+}
