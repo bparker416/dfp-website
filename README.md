@@ -65,7 +65,7 @@ docker compose up -d db     # uses docker-compose.yaml
 # 3. run the app with dev profile
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 
-# 4. running the app
+## Running The App
 | Method             | Command / URL                                                           |
 | ------------------ | ----------------------------------------------------------------------- |
 | **Dev profile**    | `./mvnw spring-boot:run -Dspring-boot.run.profiles=dev`                 |
@@ -73,15 +73,7 @@ docker compose up -d db     # uses docker-compose.yaml
 | **Docker**         | `docker build -t dfw-backend . && docker run -p 8080:8080 dfw-backend`  |
 | **Swagger UI**     | `http://localhost:8080/swagger-ui.html`                                 |
 
-# 5. running the app
-| Method             | Command / URL                                                           |
-| ------------------ | ----------------------------------------------------------------------- |
-| **Dev profile**    | `./mvnw spring-boot:run -Dspring-boot.run.profiles=dev`                 |
-| **Executable JAR** | `./mvnw clean package -DskipTests` → `java -jar target/dfw-backend.jar` |
-| **Docker**         | `docker build -t dfw-backend . && docker run -p 8080:8080 dfw-backend`  |
-| **Swagger UI**     | `http://localhost:8080/swagger-ui.html`                                 |
-
-# 6. environment variables
+## Environment Variables
 | Variable                 | Default / Example                      | Purpose                      |
 | ------------------------ | -------------------------------------- | ---------------------------- |
 | `SPRING_DATASOURCE_URL`  | `jdbc:postgresql://localhost:5432/dfw` | JDBC URL                     |
@@ -92,28 +84,28 @@ docker compose up -d db     # uses docker-compose.yaml
 | `SESSION_TIMEOUT_MIN`    | `30`                                   | Inactivity timeout (minutes) |
 | `ALLOWED_ORIGINS`        | `http://localhost:4200`                | CORS origins (comma-sep)     |
 
-# 7. database migrations
+## Database Migrations
 Managed by Flyway
 SQL scripts live in src/main/resources/db/migration
 To baseline/repair: ./mvnw flyway:repair
 
-# 8. testing
+## Testing
 ./mvnw test              # unit + slice tests
 ./mvnw verify            # integration tests with Testcontainers
 
-# 9. api documentation
+## API Documentation
 OpenAPI JSON: /v3/api-docs
 Swagger UI: /swagger-ui.html
 Postman collection: see docs/postman/dfw.postman_collection.json
 
-# 10. profiles
+## Profiles
 | Profile | Purpose                                     |
 | ------- | ------------------------------------------- |
 | `dev`   | H2 DB, CORS wide-open, detailed logging     |
 | `test`  | H2 + Testcontainers for isolation           |
 | `prod`  | PostgreSQL, stricter CORS, cached templates |
 
-# 11. building & packaging
+## Building & Packaging
 # compile + test
 ./mvnw clean verify
 
@@ -122,7 +114,7 @@ Postman collection: see docs/postman/dfw.postman_collection.json
 
 docker build -t dfw-backend 
 
-# 12. deployment guides
+## Deployment Guides
 | Platform                  | Notes                                                         |
 | ------------------------- | ------------------------------------------------------------- |
 | **Azure Web Apps**        | Deploy `dfw-backend.jar` or container; set env vars in portal |
@@ -131,7 +123,7 @@ docker build -t dfw-backend
 | **Render.com**            | Docker native; free tier for dev                              |
 | **Fly.io**                | Great for small apps; UDP sticky sessions supported           |
 
-# 13. troubleshooting tips
+## Troubleshooting Tips
 | Symptom / Log Snippet                                      | Resolution                                                           |
 | ---------------------------------------------------------- | -------------------------------------------------------------------- |
 | `org.hibernate.exception.JDBCConnectionException`          | Verify `SPRING_DATASOURCE_URL`; DB container running                 |
@@ -140,5 +132,5 @@ docker build -t dfw-backend
 | `Cookie “SameSite=Lax” blocked (cross-site)`               | Add `SameSite=None; Secure` (prod HTTPS) via `CookieSerializer` bean |
 | `405 Method Not Allowed` at `/error`                       | Use correct HTTP verb; confirm controller mapping                    |
 
-# 14. license
+## License
 This project is licensed under the MIT License. See LICENSE for details.
