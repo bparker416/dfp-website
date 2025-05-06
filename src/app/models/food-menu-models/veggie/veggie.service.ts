@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Veggie} from "./veggie";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class VeggieService {
 
-  private apiUrl = "https://dfp-backend-iz97.onrender.com/api/public/veggie";
+  private apiUrl = `${environment.apiUrl}/public/veggie`;
 
   constructor(private http: HttpClient) { }
 

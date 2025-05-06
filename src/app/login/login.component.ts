@@ -5,20 +5,18 @@ import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {environment} from "../../environment/environment.development";
 
 @Component({
   selector: 'app-login',
   imports: [
-    FormsModule, CommonModule,
-    // TODO: `HttpClientModule` should not be imported into a component directly.
-    // Please refactor the code to add `provideHttpClient()` call to the provider list in the
-    // application bootstrap logic and remove the `HttpClientModule` import from this component.
-  ],
+    FormsModule, CommonModule],
   templateUrl: './login.component.html',
   standalone: true,
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  private baseUrl= environment.apiUrl;
   username: string = '';
   password: string = '';
   errorMessage: string = '';
@@ -32,7 +30,7 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.http.post('https://dfp-backend-iz97.onrender.com/api/public/auth/login', body, {
+    this.http.post(`${this.baseUrl}/public/auth/login`, body, {
       headers: new HttpHeaders({'Content-Type': 'application/json'}),
       withCredentials: true
     })

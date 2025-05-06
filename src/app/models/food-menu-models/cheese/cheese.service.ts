@@ -3,16 +3,17 @@ import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Drinks} from "../../drink-menu-models/drinks/drinks";
 import {Cheese} from "./cheese";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheeseService {
 
-  private apiUrl = "https://dfp-backend-iz97.onrender.com/api/public/cheese";
-  private apiUrlRegular = "https://dfp-backend-iz97.onrender.com/api/public/cheese/price-is-regular";
-  private apiUrlOne = "https://dfp-backend-iz97.onrender.com/api/public/cheese/price-is-one";
-  private apiUrlTwo = "https://dfp-backend-iz97.onrender.com/api/public/cheese/price-is-two";
+  private apiUrl = `${environment.apiUrl}/public/cheese`;
+  private apiUrlRegular = `${environment.apiUrl}/public/cheese/price-is-regular`;
+  private apiUrlOne = `${environment.apiUrl}/public/cheese/price-is-one`;
+  private apiUrlTwo = `${environment.apiUrl}/public/cheese/price-is-two`;
 
   constructor(private http: HttpClient) {}
 

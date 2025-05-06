@@ -3,15 +3,16 @@ import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Drinks} from "../../drink-menu-models/drinks/drinks";
 import {Meat} from "./meat";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MeatService {
 
-  private apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/meat';
-  private apiUrlThree = "https://dfp-backend-iz97.onrender.com/api/public/meat/price-is-three";
-  private apiUrlFour = "https://dfp-backend-iz97.onrender.com/api/public/meat/price-is-four";
+  private apiUrl = `${environment.apiUrl}/public/meat`;
+  private apiUrlThree = `${environment.apiUrl}/public/meat/price-is-three`;
+  private apiUrlFour = `${environment.apiUrl}/public/meat/price-is-four`;
 
   constructor(private http: HttpClient) {}
 

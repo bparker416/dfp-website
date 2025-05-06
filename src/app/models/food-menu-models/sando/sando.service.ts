@@ -3,13 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Drinks} from "../../drink-menu-models/drinks/drinks";
 import {Sando} from "./sando";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SandoService {
 
-  private apiUrl = "https://dfp-backend-iz97.onrender.com/api/public/sando";
+  private apiUrl = `${environment.apiUrl}/public/sando`;
 
   constructor(private http: HttpClient) { }
 

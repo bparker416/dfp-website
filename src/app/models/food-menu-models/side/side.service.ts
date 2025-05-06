@@ -3,13 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Drinks} from "../../drink-menu-models/drinks/drinks";
 import {Side} from "./side";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SideService {
 
-  private apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/side';
+  private apiUrl = `${environment.apiUrl}/public/side`;
 
   constructor(private http: HttpClient) {}
 

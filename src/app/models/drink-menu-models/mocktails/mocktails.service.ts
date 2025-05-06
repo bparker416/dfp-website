@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Mocktails} from "./mocktails";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MocktailsService {
 
-  private apiUrl = 'https://dfp-backend-iz97.onrender.com/api/public/mocktails';
+  private apiUrl = `${environment.apiUrl}/public/mocktails`;
 
   constructor(private http: HttpClient) { }
 

@@ -3,13 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Drinks} from "../../drink-menu-models/drinks/drinks";
 import {Sauce} from "./sauce";
+import {environment} from "../../../../environment/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SauceService {
 
-  private apiUrl = "https://dfp-backend-iz97.onrender.com/api/public/sauce";
+  private apiUrl = `${environment.apiUrl}/public/sauce`;
 
   constructor(private http: HttpClient) { }
 
